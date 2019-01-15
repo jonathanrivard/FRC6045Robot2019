@@ -4,9 +4,6 @@ public class ShareTest{
         System.out.println("Cameron am here!");
         // NS Jan 2019
         System.out.println("Noah is here!");
-        //
-        //
-        //
-        //
+       //John's branch
     }
 }
