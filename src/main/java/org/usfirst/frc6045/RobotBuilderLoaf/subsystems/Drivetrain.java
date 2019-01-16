@@ -64,11 +64,11 @@ public class Drivetrain extends Subsystem {
         
         motorRightFront = new PWMTalonSRX(2);
         addChild("MotorRightFront",motorRightFront);
-        motorRightFront.setInverted(false);
+        motorRightFront.setInverted(true);
         
         motorRightBack = new PWMTalonSRX(3);
         addChild("MotorRightBack",motorRightBack);
-        motorRightBack.setInverted(false);
+        motorRightBack.setInverted(true);
         
         motorGroupRight = new SpeedControllerGroup(motorRightFront, motorRightBack  );
         addChild("MotorGroupRight",motorGroupRight);
