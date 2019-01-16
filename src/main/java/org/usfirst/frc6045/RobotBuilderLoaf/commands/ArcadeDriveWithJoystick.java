@@ -48,9 +48,9 @@ public class ArcadeDriveWithJoystick extends Command {
     @Override
     protected void execute() {
         //double first = (Robot.oi.getJoystickOne().getX());
-        double first = leftStick.scaledGetX();
+        double first = Robot.oi.scaledGetX();
         //double second = (Robot.oi.getJoystickOne().getY());
-        double second = leftStick.scaledGetY();
+        double second = Robot.oi.scaledGetY();
 
         drive.arcadeDrive(first, second);
     }
