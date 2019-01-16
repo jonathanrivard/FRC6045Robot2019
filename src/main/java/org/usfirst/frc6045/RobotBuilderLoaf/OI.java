@@ -77,6 +77,14 @@ public class OI {
         return joystickOne;
     }
 
+    public double scaledGetY(){
+        return joystickOne.getY() * 0.2;
+    }
+
+    public double scaledGetX(){
+        return joystickOne.getX() * 0.2;
+    }
+
     
 
 
