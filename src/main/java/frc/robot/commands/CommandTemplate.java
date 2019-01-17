@@ -1,4 +1,6 @@
-import edu.wpi.first.wpilibj.command.Command; //Get the command class
+package frc.robot.commands; 
+
+import edu.wpi.first.wpilibj.command.Command;//Get the command class
 import frc.robot.Robot; //Get our main Robot class
 import frc.robot.RobotMap; //Get our RobotMappings
 
