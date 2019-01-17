@@ -12,6 +12,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+<<<<<<< HEAD
+=======
+import frc.robot.commands.CommandTemplate;
+>>>>>>> f53cbeabf0cc5ed564654936defd76d42dd2956d
 import frc.robot.subsystems.ExampleSubsystem;
 
 /**
@@ -35,6 +39,10 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
+<<<<<<< HEAD
+=======
+    m_chooser.setDefaultOption("Default Auto", new CommandTemplate());
+>>>>>>> f53cbeabf0cc5ed564654936defd76d42dd2956d
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
   }
