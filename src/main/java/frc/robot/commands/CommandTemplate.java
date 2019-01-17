@@ -1,9 +1,11 @@
+package frc.robot.commands;
+
 import frc.robot.RobotMap; //Get our RobotMappings
 import edu.wpi.first.wpilibj.command.Command;
 
 public class CommandTemplate extends Command{
         //requires(Robot.subsubsystemVariableInRobot); 
-    }
+    
 
     protected void initialize() { //Called when command is initialized
 		
