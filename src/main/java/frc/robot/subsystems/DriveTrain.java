@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.commands.DriveArcade;
 
 /**
  * Add your docs here.
@@ -15,10 +16,19 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class DriveTrain extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  
 
   @Override
   public void initDefaultCommand() {
+    setDefaultCommand(m_arcadedrive);
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+  }
+  public DriveArcade m_arcadedrive = new DriveArcade();
+  public void arcadeDrive(){
+
+  }
+  public DriveTrain(){
+    
   }
 }
