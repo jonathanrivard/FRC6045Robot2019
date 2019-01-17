@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-import edu.wpi.first.wpilibj.command.Command; //Get the command class
-
-=======
-package frc.robot.commands; 
-
-import edu.wpi.first.wpilibj.command.Command;//Get the command class
->>>>>>> 5820803a0274d1974bf681d50a2eb728a7d45704
-import frc.robot.Robot; //Get our main Robot class
 import frc.robot.RobotMap; //Get our RobotMappings
+import edu.wpi.first.wpilibj.command.Command;
 
 public class CommandTemplate extends Command{
-    public CommandTemplate(){ //Constuctor 
         //requires(Robot.subsubsystemVariableInRobot); 
     }
 
