@@ -12,10 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-<<<<<<< HEAD
-=======
 import frc.robot.commands.CommandTemplate;
->>>>>>> f53cbeabf0cc5ed564654936defd76d42dd2956d
 import frc.robot.subsystems.ExampleSubsystem;
 
 /**
