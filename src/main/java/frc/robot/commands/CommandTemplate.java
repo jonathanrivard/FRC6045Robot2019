@@ -1,6 +1,6 @@
 import edu.wpi.first.wpilibj.command.Command; //Get the command class
-import frc.team6045.robot.Robot; //Get our main Robot class
-import frc.team6045.robot.RobotMap; //Get our RobotMappings
+import frc.robot.Robot; //Get our main Robot class
+import frc.robot.RobotMap; //Get our RobotMappings
 
 public class CommandTemplate extends Command{
     public CommandTemplate(){ //Constuctor 
