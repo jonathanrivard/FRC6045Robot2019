@@ -26,6 +26,8 @@ public class DriveArcade extends Command {
   protected void execute() {
     double moveSpeed = Robot.m_oi.joystick.getX();
     double rotateSpeed = Robot.m_oi.joystick.getY();
+
+    // change to driveArcade()
     Robot.m_drivetrain.DriveArcade(moveSpeed, rotateSpeed);
   }
 
@@ -38,6 +40,8 @@ public class DriveArcade extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+
+    // change to driveArcade()
     Robot.m_drivetrain.DriveArcade(0, 0);
   }
 
