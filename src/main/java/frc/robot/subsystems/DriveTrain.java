@@ -7,7 +7,13 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import frc.robot.RobotMap;
 import frc.robot.commands.DriveArcade;
 
 /**
@@ -16,7 +22,11 @@ import frc.robot.commands.DriveArcade;
 public class DriveTrain extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  
+  VictorSP leftFrontMotor = null;
+  VictorSP leftBackMotor = null;
+  Talon rightFrontMotor = null;
+  Talon rightBackMotor = null;
+  DifferentialDrive diff = null;
 
   @Override
   public void initDefaultCommand() {
@@ -24,12 +34,24 @@ public class DriveTrain extends Subsystem {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
+
   public DriveArcade m_arcadedrive = new DriveArcade();
 
-  public void arcadeDrive(double xValue, double yValue ){
+  public void arcadeDrive(double xValue, double yValue) {
+    diff.arcadeDrive(xValue, yValue);
 
   }
-  public DriveTrain(){
-    
+
+  public DriveTrain() {
+    leftFrontMotor = new VictorSP(RobotMap.MOTOR_LEFT_FRONT);
+    leftBackMotor = new VictorSP(RobotMap.MOTOR_LEFT_BACK);
+    rightFrontMotor = new Talon(RobotMap.MOTOR_RIGHT_FRONT);
+    rightBackMotor = new Talon(RobotMap.MOTOR_RIGHT_BACK);
+
+    SpeedControllerGroup leftMotors = new SpeedControllerGroup(leftFrontMotor, leftBackMotor);
+    SpeedControllerGroup rightMotors = new SpeedControllerGroup(rightFrontMotor, rightBackMotor);
+
+    diff = new DifferentialDrive(leftMotors, rightMotors);
+
   }
 }
