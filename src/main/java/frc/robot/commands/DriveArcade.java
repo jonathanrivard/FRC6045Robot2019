@@ -9,10 +9,11 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.subsystems.DriveTrain;
 
 public class DriveArcade extends Command {
-  public DriveArcade() {
-    requires(Robot.m_drivetrain);
+  public DriveArcade(DriveTrain drive) {
+    requires(drive);
   }
 
   // Called just before this Command runs the first time

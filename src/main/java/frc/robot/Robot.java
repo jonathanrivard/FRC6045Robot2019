@@ -27,7 +27,7 @@ import frc.robot.subsystems.DriveTrain;
 public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
-  public static DriveTrain m_drivetrain = new DriveTrain();
+  public static DriveTrain m_drivetrain = null;
 
 
   Command m_autonomousCommand;
@@ -39,9 +39,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    m_oi = new OI();
     m_drivetrain = new DriveTrain();
-    m_chooser.setDefaultOption("Default Auto", new DriveArcade());
+    m_oi = new OI();
+   // m_chooser.setDefaultOption("Default Auto", new DriveArcade());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
   }
@@ -124,8 +124,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
-    Scheduler.getInstance().run();
+    m_drivetrain.arcadeDrive(m_oi.joystick.getX(), m_oi.joystick.getY());
   }
+    
 
   /**
    * This function is called periodically during test mode.
