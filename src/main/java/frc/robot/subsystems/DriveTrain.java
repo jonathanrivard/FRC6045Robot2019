@@ -27,7 +27,8 @@ public class DriveTrain extends Subsystem {
   Talon rightFrontMotor = null;
   Talon rightBackMotor = null;
   DifferentialDrive diff = null;
-
+  public DriveArcade m_arcadedrive = new DriveArcade();
+  
   @Override
   public void initDefaultCommand() {
     setDefaultCommand(m_arcadedrive);
@@ -35,7 +36,7 @@ public class DriveTrain extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 
-  public DriveArcade m_arcadedrive = new DriveArcade();
+  
 
   public void arcadeDrive(double xValue, double yValue) {
     diff.arcadeDrive(xValue, yValue);
