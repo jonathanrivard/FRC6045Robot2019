@@ -28,7 +28,7 @@ public class DriveArcade extends Command {
     double rotateSpeed = Robot.m_oi.joystick.getY();
 
     // change to driveArcade()
-    Robot.m_drivetrain.DriveArcade(moveSpeed, rotateSpeed);
+    Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -42,7 +42,7 @@ public class DriveArcade extends Command {
   protected void end() {
 
     // change to driveArcade()
-    Robot.m_drivetrain.DriveArcade(0, 0);
+    Robot.m_drivetrain.arcadeDrive(0, 0);
   }
 
   // Called when another command which requires one or more of the same

@@ -25,7 +25,8 @@ public class DriveTrain extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
   public DriveArcade m_arcadedrive = new DriveArcade();
-  public void arcadeDrive(){
+
+  public void arcadeDrive(double xValue, double yValue ){
 
   }
   public DriveTrain(){
