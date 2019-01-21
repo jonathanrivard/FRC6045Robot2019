@@ -45,7 +45,9 @@ public class DriveTrain extends Subsystem {
 
   public DriveTrain() {
     leftFrontMotor = new VictorSP(RobotMap.MOTOR_LEFT_FRONT);
+    leftFrontMotor.setInverted(false);
     leftBackMotor = new VictorSP(RobotMap.MOTOR_LEFT_BACK);
+    leftBackMotor.setInverted(false);
     rightFrontMotor = new Talon(RobotMap.MOTOR_RIGHT_FRONT);
     rightBackMotor = new Talon(RobotMap.MOTOR_RIGHT_BACK);
 
