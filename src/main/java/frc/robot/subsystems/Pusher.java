@@ -8,17 +8,29 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-
+import frc.robot.RobotMap;
+import frc.robot.commands.RotatePusher;
+import edu.wpi.first.wpilibj.Spark;
 /**
  * Add your docs here.
  */
 public class Pusher extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  Spark pushMotor = null;
+
+  public RotatePusher pusherCommand = new RotatePusher(this);
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+  }
+  public void rotatePusher(double degrees){
+    //Fill out later
+  }
+  public Pusher(){
+    pushMotor = new Spark(RobotMap.MOTOR_PUSHER);
+    pushMotor.setInverted(false);
   }
 }
