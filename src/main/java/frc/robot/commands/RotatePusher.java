@@ -9,9 +9,10 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.*;
+import frc.robot.*;
 public class RotatePusher extends Command {
   public RotatePusher() { 
-    requires(Robot.m_pusher);
+    requires(Robot.m_Pusher);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }

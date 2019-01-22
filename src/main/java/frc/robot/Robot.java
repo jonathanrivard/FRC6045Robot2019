@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Pusher;
+import frc.robot.commands.RotatePusher;
 import frc.robot.subsystems.DriveTrain;
 
 /**
@@ -39,7 +40,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    RobotMap.init();
     m_drivetrain = new DriveTrain();
+    m_Pusher = new Pusher();
     m_oi = new OI();
    // m_chooser.setDefaultOption("Default Auto", new DriveArcade());
     // chooser.addOption("My Auto", new MyAutoCommand());
