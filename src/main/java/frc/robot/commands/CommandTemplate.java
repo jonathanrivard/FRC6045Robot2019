@@ -1,6 +1,6 @@
 package frc.robot.commands;
 
-import frc.robot.RobotMap; //Get our RobotMappings
+//import frc.robot.RobotMap; //Get our RobotMappings
 import edu.wpi.first.wpilibj.command.Command;
 
 public class CommandTemplate extends Command{
