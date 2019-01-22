@@ -28,7 +28,7 @@ public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
   public static DriveTrain m_drivetrain = null;
-  public static Pusher m_Pusher = null;
+  public static Pusher m_Pusher = new Pusher();
 
 
   Command m_autonomousCommand;
@@ -40,9 +40,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    RobotMap.init();
-    m_drivetrain = new DriveTrain();
-    m_Pusher = new Pusher();
+    RobotMap.init(); // <--------------can remove (return RobotMap to how it was)
+    m_drivetrain = new DriveTrain();// can move up (see line 31)
+    //m_Pusher = new Pusher();
     m_oi = new OI();
    // m_chooser.setDefaultOption("Default Auto", new DriveArcade());
     // chooser.addOption("My Auto", new MyAutoCommand());
