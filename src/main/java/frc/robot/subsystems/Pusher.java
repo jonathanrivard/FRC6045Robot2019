@@ -19,7 +19,7 @@ public class Pusher extends Subsystem {
   // here. Call these from Commands.
   Spark pushMotor = null;
 
-  public RotatePusher pusherCommand = new RotatePusher(this);
+  public RotatePusher pusherCommand = new RotatePusher();
 
   @Override
   public void initDefaultCommand() {
