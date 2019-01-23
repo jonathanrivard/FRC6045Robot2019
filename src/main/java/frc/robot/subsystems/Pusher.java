@@ -18,7 +18,7 @@ public class Pusher extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   Spark pushMotor = null;
-  RotatePusher pusherCommand;
+  RotatePusher pusherCommand = null;
   
 
   @Override
