@@ -18,8 +18,8 @@ public class Pusher extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   Spark pushMotor = null;
-
-  RotatePusher pusherCommand = new RotatePusher();
+  RotatePusher pusherCommand;
+  
 
   @Override
   public void initDefaultCommand() {
@@ -30,6 +30,7 @@ public class Pusher extends Subsystem {
     //Fill out later
   }
   public Pusher(){
+    pusherCommand = new RotatePusher();
     pushMotor = new Spark(RobotMap.MOTOR_PUSHER);
     pushMotor.setInverted(false);
   }
