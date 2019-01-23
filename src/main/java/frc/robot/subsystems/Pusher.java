@@ -24,13 +24,13 @@ public class Pusher extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand( new RotatePusher());
   }
   public void rotatePusher(double degrees){
     //Fill out later
   }
   public Pusher(){
-    pusherCommand = new RotatePusher();
+
     pushMotor = new Spark(RobotMap.MOTOR_PUSHER);
     pushMotor.setInverted(false);
   }
