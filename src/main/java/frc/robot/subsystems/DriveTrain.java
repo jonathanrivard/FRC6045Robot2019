@@ -26,11 +26,10 @@ public class DriveTrain extends Subsystem {
   Talon rightFrontMotor = null;
   Talon rightBackMotor = null;
   DifferentialDrive diff = null;
-  public DriveArcade m_arcadedrive = new DriveArcade(this);
-  
+ 
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(m_arcadedrive);
+    setDefaultCommand(new DriveArcade());
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }

@@ -12,8 +12,8 @@ import frc.robot.Robot;
 import frc.robot.subsystems.DriveTrain;
 
 public class DriveArcade extends Command {
-  public DriveArcade(DriveTrain drive) {
-    requires(drive);
+  public DriveArcade(){
+    requires(Robot.m_drivetrain);
   }
 
   // Called just before this Command runs the first time
@@ -24,11 +24,11 @@ public class DriveArcade extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double moveSpeed = Robot.m_oi.joystick.getX();
-    double rotateSpeed = Robot.m_oi.joystick.getY();
+    double moveSpeed = Robot.m_oi.joystick.getY();
+    double rotateSpeed = Robot.m_oi.joystick.getX();
 
     // change to driveArcade()
-    Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
+    Robot.m_drivetrain.arcadeDrive(moveSpeed * - 0.5, rotateSpeed * 0.5);
   }
 
   // Make this return true when this Command no longer needs to run execute()
