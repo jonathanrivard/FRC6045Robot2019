@@ -18,7 +18,7 @@ import frc.robot.commands.RotatePusher;
  */
 public class OI {
   public Joystick joystick = new Joystick(0);
-  Button button1 = new JoystickButton(joystick, 1);
+  Button button1 = new JoystickButton(joystick, 2);
 public OI(){
   
   button1.whenPressed(new RotatePusher());
