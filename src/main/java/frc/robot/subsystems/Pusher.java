@@ -29,7 +29,7 @@ public class Pusher extends Subsystem {
   }
   public void rotatePusher(double degrees){
     if (motorToggel == true){
-      pushMotor.set(0.2);
+      pushMotor.set(0.5);
       motorToggel = false;
     }  
     else if (motorToggel == false){
