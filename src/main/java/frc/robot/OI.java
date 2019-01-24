@@ -18,10 +18,11 @@ import frc.robot.commands.RotatePusher;
  */
 public class OI {
   public Joystick joystick = new Joystick(0);
-  Button button1 = new JoystickButton(joystick, 2);
+  Button button1 = new JoystickButton(joystick, 1);
 public OI(){
   
-  button1.whenPressed(new RotatePusher());
+  button1.whileHeld(new RotatePusher());
+
 }
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
