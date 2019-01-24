@@ -20,7 +20,7 @@ public class OI {
   public Joystick joystick = new Joystick(0);
   Button button1 = new JoystickButton(joystick, 1);
 public OI(){
-  button1 = new JoystickButton(joystick, 1);
+  
   button1.whenPressed(new RotatePusher());
 }
   //// CREATING BUTTONS
