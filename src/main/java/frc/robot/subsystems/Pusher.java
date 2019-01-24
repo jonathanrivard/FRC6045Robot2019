@@ -19,6 +19,7 @@ public class Pusher extends Subsystem {
   // here. Call these from Commands.
   Spark pushMotor = null;
   RotatePusher pusherCommand = null;
+  boolean motorToggel = true;
   
 
   @Override
@@ -27,8 +28,17 @@ public class Pusher extends Subsystem {
     setDefaultCommand( new RotatePusher());
   }
   public void rotatePusher(double degrees){
-    //Fill out later
+    if (motorToggel == true){
+      pushMotor.set(0.2);
+      motorToggel = false;
+    }  
+    else if (motorToggel == false){
+      pushMotor.set(0.0);
+      motorToggel = true;
+    }
   }
+    
+
   public Pusher(){
 
     pushMotor = new Spark(RobotMap.MOTOR_PUSHER);
