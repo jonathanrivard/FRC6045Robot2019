@@ -25,7 +25,7 @@ public class Pusher extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand( new RotatePusher());
+   
   }
   public void rotatePusher(double degrees){
    pushMotor.set(degrees);
