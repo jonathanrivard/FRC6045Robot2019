@@ -38,5 +38,6 @@ public class Pusher extends Subsystem {
 
     pushMotor = new Spark(RobotMap.MOTOR_PUSHER);
     pushMotor.setInverted(false);
+    pushMotor.enableDeadbandElimination(true);
   }
 }
