@@ -17,11 +17,12 @@ import frc.robot.commands.RotatePusher;
  */
 public class OI {
   public Joystick joystick = new Joystick(0);
-  Button button1 = new JoystickButton(joystick, 1);
-  Button button2 = new JoystickButton(joystick, 2);
+  Button button1 = new JoystickButton(joystick, RobotMap.BUTTON_TRIGGER);
+  Button button2 = new JoystickButton(joystick, RobotMap.BUTTON_THUMB);
 public OI(){
   
   button1.whileHeld(new RotatePusher(1));
+  button2.whileHeld(new RotatePusher(-1));
 
 }
   //// CREATING BUTTONS
