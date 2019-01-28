@@ -5,6 +5,8 @@ public class RobotMap {
 
     //Joystick Mapping
     public static int JOYSTICK_USB = 0;
+    public static int BUTTON_TRIGGER = 0;
+    public static int BUTTON_THUMB = 1;
     //Motor Channels
     public static int MOTOR_LEFT_FRONT = 0;
     public static int MOTOR_LEFT_BACK = 1;
