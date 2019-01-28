@@ -24,8 +24,10 @@ public class DriveArcade extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double increaseMoveSpeed = Robot.m_oi.joystick.getThrottle();
     double moveSpeed = Robot.m_oi.joystick.getY();
     double rotateSpeed = Robot.m_oi.joystick.getX();
+  
 
     // change to driveArcade()
     Robot.m_drivetrain.arcadeDrive(moveSpeed * - 0.5, rotateSpeed * 0.5);
