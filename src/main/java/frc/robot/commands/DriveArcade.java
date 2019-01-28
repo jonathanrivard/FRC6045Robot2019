@@ -25,7 +25,7 @@ public class DriveArcade extends Command {
   @Override
   protected void execute() {
     double throttleValue = Robot.m_oi.joystick.getThrottle();
-    throttleValue = (throttleValue + 1) / 2.0;
+    throttleValue = (throttleValue * -1 + 1) / 2; //Scale value (original is from -1 to 1, up is -1)
     double moveSpeed = Robot.m_oi.joystick.getY() * throttleValue;
     double rotateSpeed = Robot.m_oi.joystick.getX() * throttleValue;
   
