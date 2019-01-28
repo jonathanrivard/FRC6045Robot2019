@@ -21,7 +21,7 @@ public class OI {
   Button button2 = new JoystickButton(joystick, 2);
 public OI(){
   
-  button1.whileHeld(new RotatePusher());
+  button1.whileHeld(new RotatePusher(1));
 
 }
   //// CREATING BUTTONS
