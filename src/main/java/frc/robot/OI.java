@@ -8,7 +8,6 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.*;
 import frc.robot.commands.RotatePusher;
 
@@ -19,6 +18,7 @@ import frc.robot.commands.RotatePusher;
 public class OI {
   public Joystick joystick = new Joystick(0);
   Button button1 = new JoystickButton(joystick, 1);
+  Button button2 = new JoystickButton(joystick, 2);
 public OI(){
   
   button1.whileHeld(new RotatePusher());
