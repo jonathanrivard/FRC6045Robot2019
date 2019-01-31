@@ -12,3 +12,6 @@ http://www.ctr-electronics.com/breakoutmodule.html
 
 MegaPicture LifeBlaster Camera 8,000,000 v25
 https://wpilib.screenstepslive.com/s/currentCS/m/vision/l/288981-using-the-microsoft-lifecam-hd-3000
+
+Encoder ScreenSteps
+https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599717-encoders-measuring-rotation-of-a-wheel-or-other-shaft
