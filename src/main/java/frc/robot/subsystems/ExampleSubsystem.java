@@ -6,6 +6,8 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.subsystems;
+import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Encoder;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -15,11 +17,32 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class ExampleSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  Talon testMotor = null;
+  Encoder enc;
 
+  public ExampleSubsystem(){
+	testMotor = new Talon(RobotMap.TEST_MOTOR);
+    testMotor.setInverted(false);
+    testMotor.enableDeadbandElimination(true);
+    enc = new Encoder(0,1,false, Encoder.EncodingType.k4X);
+    enc.setMaxPeriod(.1);
+enc.setMinRate(10);
+enc.setDistancePerPulse(5);
+enc.setReverseDirection(true);
+enc.setSamplesToAverage(7);
+  }
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+  }
+  @Override
+  protected void execute(){
+	testMotor.set(0.4);
+    int count = enc.get();
+double rate = enc.getRate();
+boolean direction = enc.getDirection();
+boolean stopped = enc.getStopped();
   }
 /*
 package frc.robot.subsystems;
