@@ -8,7 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
+import frc.robot.*;
 
 public class RotatePusher extends Command {
   int direction = 0; //1 is forward, -1 is backwards

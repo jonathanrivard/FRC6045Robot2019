@@ -17,6 +17,9 @@ import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Pusher;
 import frc.robot.subsystems.Claw;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.commands.Tilt;
+import frc.robot.commands.Grab;
+import frc.robot.commands.Intake;
 
 /**
  * The VM is configured to automatically run this class, and to call the
