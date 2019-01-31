@@ -7,19 +7,33 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.RobotMap;
 
 public class TestCommand extends Command {
-  public TestCommand() {
+
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-  }
+    Talon testMotor = null;
+    Encoder enc;
+  
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
   }
-
+  public TestCommand(){
+    testMotor = new Talon(RobotMap.TEST_MOTOR);
+    testMotor.setInverted(false);
+    enc = new Encoder(0,1,false, Encoder.EncodingType.k4X);
+    enc.setMaxPeriod(.1);
+enc.setMinRate(10);
+enc.setDistancePerPulse(5);
+enc.setReverseDirection(true);
+enc.setSamplesToAverage(7);
+  }
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
