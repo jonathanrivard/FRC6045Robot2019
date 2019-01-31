@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Pusher;
+import frc.robot.subsystems.Claw;
 import frc.robot.subsystems.DriveTrain;
 
 /**
@@ -28,6 +29,7 @@ public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static DriveTrain m_drivetrain = new DriveTrain();
   public static Pusher m_Pusher = new Pusher();
+  public static Claw m_Claw = new Claw();
   public static OI m_oi = new OI();
 
 
