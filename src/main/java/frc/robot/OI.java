@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
 import frc.robot.commands.RotatePusher;
+import frc.robot.commands.TestCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -19,10 +20,13 @@ public class OI {
   public Joystick joystick = new Joystick(0);
   Button button1 = new JoystickButton(joystick, RobotMap.BUTTON_TRIGGER);
   Button button2 = new JoystickButton(joystick, RobotMap.BUTTON_THUMB);
+  Button button3 = new JoystickButton(joystick, RobotMap.BUTTON_THREE);
 public OI(){
   
   button1.whileHeld(new RotatePusher(1));
   button2.whileHeld(new RotatePusher(-1));
+  button3.whileHeld(new TestCommand());
+
 
 }
   //// CREATING BUTTONS
