@@ -8,9 +8,12 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
+
 
 public class Grab extends Command {
   public Grab() {
+    requires(Robot.m_Claw);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }

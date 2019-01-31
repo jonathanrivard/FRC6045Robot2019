@@ -8,9 +8,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class Tilt extends Command {
   public Tilt() {
+    requires(Robot.m_Claw);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
