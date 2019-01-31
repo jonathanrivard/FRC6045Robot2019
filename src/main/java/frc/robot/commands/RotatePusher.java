@@ -11,13 +11,11 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import frc.robot.*;
 public class RotatePusher extends Command {
-  int direction = 0;
+  int direction = 0; //1 is forward, -1 is backwards
 
   public RotatePusher(int direction) { 
-    requires(Robot.m_Pusher);
-    this.direction = direction;
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.m_Pusher); //Require the Pusher from Robot
+    this.direction = direction; //Set direction to parameter
   }
 
   // Called just before this Command runs the first time
@@ -34,7 +32,6 @@ public class RotatePusher extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
- 
     return false;
   }
 
