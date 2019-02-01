@@ -22,6 +22,7 @@ public class TestCommand extends Command {
   public void TestCommand(){
     requires(Robot.m_subsystem);
     motor.set(0.4);
+    System.out.println("TestCommand Made");
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -58,6 +59,7 @@ public class TestCommand extends Command {
   @Override
   protected void end() {
     motor.set(0.0);
+    System.out.println("TestCommand Ended");
   }
 
   // Called when another command which requires one or more of the same
