@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends TimedRobot {
   public static OI m_oi = new OI();
@@ -24,13 +25,7 @@ public class Robot extends TimedRobot {
   //This function is run when the robot starts up
   @Override
   public void robotInit() {
-<<<<<<< HEAD
-   
-
-
-=======
     m_oi = new OI();
->>>>>>> 08a1ec76eeab3d34d6146a05c7b7f2f409352963
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     //SmartDashboard.putData("Auto mode", m_chooser);
