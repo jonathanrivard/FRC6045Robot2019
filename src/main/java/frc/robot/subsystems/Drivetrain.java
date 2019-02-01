@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
@@ -24,7 +25,6 @@ public class Drivetrain extends Subsystem {
   DifferentialDrive drive;
   SpeedControllerGroup leftMotors;
   SpeedControllerGroup rightMotors;
-
 
   public Drivetrain(){
     //Create Motors
@@ -41,6 +41,10 @@ public class Drivetrain extends Subsystem {
 
   public void arcadeDrive(double xSpeed, double zRotation){
     drive.arcadeDrive(xSpeed, zRotation);
+  }
+
+  public void test(){
+    System.out.println("Test");
   }
 
   @Override
