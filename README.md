@@ -15,3 +15,6 @@ https://wpilib.screenstepslive.com/s/currentCS/m/vision/l/288981-using-the-micro
 
 Encoder ScreenSteps
 https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599717-encoders-measuring-rotation-of-a-wheel-or-other-shaft
+
+Encoder Manual for Talon
+http://www.ctr-electronics.com/downloads/pdf/Magnetic%20Encoder%20User's%20Guide.pdf
