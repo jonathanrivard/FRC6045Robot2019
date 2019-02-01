@@ -8,17 +8,22 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
-/**
- * Add your docs here.
- */
 public class Drivetrain extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+
+  TalonSRX frontLeftMotor;
+  TalonSRX backLeftMotor;
+  TalonSRX frontRightMotor;
+  TalonSRX backRightMotor;
+
+
+  public Drivetrain(){
+
+  }
 
   @Override
   public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+    //setDefaultCommand(new MySpecialCommand());
   }
 }
