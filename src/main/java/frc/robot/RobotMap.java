@@ -7,8 +7,8 @@ public class RobotMap {
     public static int JOYSTICK_THUMB = 2;
     public static int JOYSTICK_BUTTON = 3;
 //MOTORS
-    public static int MOTOR_LEFT_FRONT = 0;
-    public static int MOTOR_LEFT_BACK = 1;
-    public static int MOTOR_RIGHT_FRONT = 2;
-    public static int MOTOR_RIGHT_BACK = 3;
+    public static int MOTOR_LEFT_FRONT = 14;
+    public static int MOTOR_LEFT_BACK = 15;
+    public static int MOTOR_RIGHT_FRONT = 1;
+    public static int MOTOR_RIGHT_BACK = 0;
 }
