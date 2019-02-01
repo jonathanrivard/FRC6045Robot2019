@@ -21,7 +21,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static OI m_oi;
+  public static OI m_oi
 
   m_oi = new OI();
   Command m_autonomousCommand;
