@@ -18,13 +18,14 @@ public class TestCommand extends Command {
 
   Encoder enc;
   Talon motor;
+  double speed;
 
-  public TestCommand(){
+  public TestCommand(double speed){
     requires(Robot.m_subsystem);
     System.out.println("TestCommand Made");
     enc = Robot.m_subsystem.getEnc();
     motor = Robot.m_subsystem.getMotor();
-    motor.set(1);
+    this.speed = speed;
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -39,6 +40,7 @@ public class TestCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    motor.set(speed);
     int count = enc.get();
     double rate = enc.getRate();
     boolean direction = enc.getDirection();
@@ -46,13 +48,12 @@ public class TestCommand extends Command {
     System.out.println(count + " count" );
     System.out.println(rate + " rate");
     System.out.println(direction + " diretion");
-    System.out.println(stopped + " stopped");
+    System.out.println(stopped + " stopped"); 
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    end();
     return false;
 
   }
@@ -68,5 +69,6 @@ public class TestCommand extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }
