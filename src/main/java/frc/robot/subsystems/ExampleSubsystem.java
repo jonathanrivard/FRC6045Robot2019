@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Encoder;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
@@ -19,7 +20,20 @@ public class ExampleSubsystem extends Subsystem {
   // here. Call these from Commands.
   Talon testMotor = null;
   Encoder enc;
-
+  
+  @Override
+  public void initDefaultCommand() {
+    setDefaultCommand(new TestCommand());
+    // Set the default command for a subsystem here.
+    // setDefaultCommand(new MySpecialCommand());
+  }
+  public void TestCommand(){
+	testMotor.set(0.4);
+    int count = enc.get();
+double rate = enc.getRate();
+boolean direction = enc.getDirection();
+boolean stopped = enc.getStopped();
+}
   public ExampleSubsystem(){
 	testMotor = new Talon(RobotMap.TEST_MOTOR);
     testMotor.setInverted(false);
@@ -36,14 +50,8 @@ enc.setSamplesToAverage(7);
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
-  @Override
-  protected void execute(){
-	testMotor.set(0.4);
-    int count = enc.get();
-double rate = enc.getRate();
-boolean direction = enc.getDirection();
-boolean stopped = enc.getStopped();
-  }
+
+  
 /*
 package frc.robot.subsystems;
 

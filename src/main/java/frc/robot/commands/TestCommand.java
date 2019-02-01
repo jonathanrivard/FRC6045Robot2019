@@ -31,7 +31,6 @@ public class TestCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    
 System.out.println(count + "count" );
 System.out.println(rate + "rate");
 System.out.println(direction + "diretion");
