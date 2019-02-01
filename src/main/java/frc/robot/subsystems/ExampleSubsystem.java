@@ -19,38 +19,31 @@ public class ExampleSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   Talon testMotor = null;
-  Encoder enc;
+	Encoder enc;
+	
+	public Encoder getEnc() { return enc; }
+	public Talon getMotor() { return testMotor; }
   
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(new TestCommand());
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
-  public void TestCommand(){
-	testMotor.set(0.4);
-    int count = enc.get();
-double rate = enc.getRate();
-boolean direction = enc.getDirection();
-boolean stopped = enc.getStopped();
-}
+  
   public ExampleSubsystem(){
-	testMotor = new Talon(RobotMap.TEST_MOTOR);
+		//Create motor
+		testMotor = new Talon(RobotMap.TEST_MOTOR);
     testMotor.setInverted(false);
-    testMotor.enableDeadbandElimination(true);
+		testMotor.enableDeadbandElimination(true);
+		
+		//Create encoder
     enc = new Encoder(0,1,false, Encoder.EncodingType.k4X);
     enc.setMaxPeriod(.1);
-enc.setMinRate(10);
-enc.setDistancePerPulse(5);
-enc.setReverseDirection(true);
-enc.setSamplesToAverage(7);
+		enc.setMinRate(10);
+		enc.setDistancePerPulse(5);
+		enc.setReverseDirection(true);
+		enc.setSamplesToAverage(7);
   }
-  @Override
-  public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
-  }
-
   
 /*
 package frc.robot.subsystems;

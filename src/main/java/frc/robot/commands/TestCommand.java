@@ -10,31 +10,40 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 import  frc.robot.subsystems.*;
 
 public class TestCommand extends Command {
 
+  Encoder enc = Robot.m_subsystem.getEnc();
+  Talon motor = Robot.m_subsystem.getMotor();
+
+  public void TestCommand(){
+    requires(Robot.m_subsystem);
+    motor.set(0.4);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    
-  
+  }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
   }
-  public TestCommand(){
+
    
 
-  }
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-System.out.println(count + "count" );
-System.out.println(rate + "rate");
-System.out.println(direction + "diretion");
-System.out.println(stopped + "stopped");
+    int count = enc.get();
+    double rate = enc.getRate();
+    boolean direction = enc.getDirection();
+    boolean stopped = enc.getStopped();
+    System.out.println(count + "count" );
+    System.out.println(rate + "rate");
+    System.out.println(direction + "diretion");
+    System.out.println(stopped + "stopped");
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -48,8 +57,7 @@ System.out.println(stopped + "stopped");
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    testMotor.set(0);
-
+    motor.set(0.0);
   }
 
   // Called when another command which requires one or more of the same
