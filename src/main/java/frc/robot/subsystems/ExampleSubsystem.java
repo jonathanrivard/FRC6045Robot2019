@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.TestCommand;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 /**
  * Add your docs here.
@@ -19,11 +20,11 @@ import frc.robot.commands.TestCommand;
 public class ExampleSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  Talon testMotor = null;
+  TalonSRX testMotor = null;
 	Encoder enc;
 	
 	public Encoder getEnc() { return enc; }
-	public Talon getMotor() { return testMotor; }
+	public TalonSRX getMotor() { return testMotor; }
   
   @Override
   public void initDefaultCommand() {
@@ -33,9 +34,8 @@ public class ExampleSubsystem extends Subsystem {
   
   public ExampleSubsystem(){
 		//Create motor
-		testMotor = new Talon(RobotMap.TEST_MOTOR);
+		testMotor = new TalonSRX(RobotMap.TEST_MOTOR);
     testMotor.setInverted(false);
-		testMotor.enableDeadbandElimination(true);
 		
 		//Create encoder
     enc = new Encoder(0,1,false, Encoder.EncodingType.k4X);

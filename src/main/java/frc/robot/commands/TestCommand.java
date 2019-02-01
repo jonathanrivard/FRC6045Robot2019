@@ -6,25 +6,27 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
-
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
-import  frc.robot.subsystems.*;
+import frc.robot.subsystems.*;
+
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.FeedbackDevice;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 public class TestCommand extends Command {
 
   Encoder enc;
-  Talon motor;
+  TalonSRX motor;
   double speed;
 
   public TestCommand(double speed){
     requires(Robot.m_subsystem);
     System.out.println("TestCommand Made");
-    enc = Robot.m_subsystem.getEnc();
-    motor = Robot.m_subsystem.getMotor();
+    
     this.speed = speed;
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -33,6 +35,9 @@ public class TestCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    System.out.println("TestCommand Init");
+    enc = Robot.m_subsystem.getEnc();
+    motor = Robot.m_subsystem.getMotor();
   }
 
    
@@ -40,7 +45,8 @@ public class TestCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    motor.set(speed);
+    motor.set(ControlMode.PercentOutput, speed);
+    /*
     int count = enc.get();
     double rate = enc.getRate();
     boolean direction = enc.getDirection();
@@ -49,6 +55,7 @@ public class TestCommand extends Command {
     System.out.println(rate + " rate");
     System.out.println(direction + " diretion");
     System.out.println(stopped + " stopped"); 
+    */
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -61,7 +68,7 @@ public class TestCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    motor.set(0.0);
+    motor.set(ControlMode.PercentOutput, 0.0);
     System.out.println("TestCommand Ended");
   }
 
