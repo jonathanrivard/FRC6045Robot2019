@@ -7,19 +7,40 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import frc.robot.RobotMap;
+
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 public class Drivetrain extends Subsystem {
 
-  TalonSRX frontLeftMotor;
-  TalonSRX backLeftMotor;
-  TalonSRX frontRightMotor;
-  TalonSRX backRightMotor;
+  
+  WPI_TalonSRX frontLeftMotor;
+  WPI_TalonSRX backLeftMotor;
+  WPI_TalonSRX frontRightMotor;
+  WPI_TalonSRX backRightMotor;
+  DifferentialDrive drive;
+  SpeedControllerGroup leftMotors;
+  SpeedControllerGroup rightMotors;
 
 
   public Drivetrain(){
+    //Create Motors
+    frontLeftMotor = new WPI_TalonSRX(RobotMap.MOTOR_LEFT_FRONT);
+    backLeftMotor = new WPI_TalonSRX(RobotMap.MOTOR_LEFT_BACK);
+    frontRightMotor = new WPI_TalonSRX(RobotMap.MOTOR_RIGHT_FRONT);
+    backRightMotor = new WPI_TalonSRX(RobotMap.MOTOR_RIGHT_BACK);
+    //Create motor sides
+    leftMotors = new SpeedControllerGroup(frontLeftMotor, backLeftMotor);
+    rightMotors = new SpeedControllerGroup(frontRightMotor, backRightMotor);
+    //Create drive
+    drive = new DifferentialDrive(leftMotors, rightMotors);
+  }
 
+  public void arcadeDrive(double xSpeed, double zRotation){
+    drive.arcadeDrive(xSpeed, zRotation);
   }
 
   @Override
