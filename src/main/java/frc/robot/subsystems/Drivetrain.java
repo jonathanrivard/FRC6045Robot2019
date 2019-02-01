@@ -18,7 +18,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 public class Drivetrain extends Subsystem {
 
   //Instance Variables
-  WPI_TalonSRX frontLeftMotor;
+  public WPI_TalonSRX frontLeftMotor;
   WPI_TalonSRX backLeftMotor;
   WPI_TalonSRX frontRightMotor;
   WPI_TalonSRX backRightMotor;

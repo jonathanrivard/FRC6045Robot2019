@@ -7,19 +7,18 @@
 
 package frc.robot;
 
-import org.usfirst.frc6045.RobotBuilderLoaf.subsystems.Drivetrain;
-
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.Drivetrain;
 import frc.robot.commands.ArcadeDrive;
 
 public class Robot extends TimedRobot {
   //Subsystems
-  public static Drivetrain m_drivetrain;
+  public static Drivetrain m_drivetrain = new Drivetrain();
   public static Lift m_lift;
   //OI
   public static OI m_oi;
@@ -32,7 +31,7 @@ public class Robot extends TimedRobot {
   //This function is run when the robot starts up
   @Override
   public void robotInit() {
-    //m_drivetrain = new Drivetrain();
+    m_drivetrain = new Drivetrain();
     m_lift = new Lift();
     m_oi = new OI();
     m_arcadeDrive = new ArcadeDrive();

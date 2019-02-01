@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class ArcadeDrive extends Command {
 
   public ArcadeDrive() {
-    requires(frc.robot.Robot.m_drivetrain);
+    requires(Robot.m_drivetrain);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -31,7 +31,7 @@ public class ArcadeDrive extends Command {
   protected void execute() {
     double xSpeed = Robot.m_oi.joystick.getX();
     double zRotate = Robot.m_oi.joystick.getZ();
-    Robot.m_drivetrain.arcadeDrive();
+    Robot.m_drivetrain.arcadeDrive(xSpeed, zRotate);
   }
 
   // Make this return true when this Command no longer needs to run execute()
