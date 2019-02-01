@@ -45,7 +45,12 @@ public class TestCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    motor.set(ControlMode.PercentOutput, speed);
+    motor.set(ControlMode.PercentOutput, 1);
+    
+    System.out.println(motor.getSelectedSensorVelocity());
+    //System.out.println(motor.getSensorCollection());
+    System.out.println();
+
     /*
     int count = enc.get();
     double rate = enc.getRate();
