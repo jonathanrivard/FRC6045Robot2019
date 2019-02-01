@@ -7,18 +7,16 @@
 
 package frc.robot;
 
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-<<<<<<< HEAD
-import frc.robot.subsystems.Lift;
-import frc.robot.subsystems.Drivetrain;
-import frc.robot.commands.ArcadeDrive;
-=======
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
->>>>>>> a107c747a25bb24a9cbce736ac9d02f0f3a36d62
+
+import frc.robot.subsystems.*;
+import frc.robot.commands.*;
 
 public class Robot extends TimedRobot {
   //Subsystems
@@ -35,15 +33,6 @@ public class Robot extends TimedRobot {
   //This function is run when the robot starts up
   @Override
   public void robotInit() {
-<<<<<<< HEAD
-    m_drivetrain = new Drivetrain();
-    m_lift = new Lift();
-    m_oi = new OI();
-    m_arcadeDrive = new ArcadeDrive();
-    //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
-    // chooser.addOption("My Auto", new MyAutoCommand());
-    //SmartDashboard.putData("Auto mode", m_chooser);
-=======
     m_oi = new OI();
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
@@ -52,7 +41,6 @@ public class Robot extends TimedRobot {
     
     SmartDashboard.putData("Auto mode", m_chooser);
     CameraServer.getInstance().startAutomaticCapture(); //Setup camera
->>>>>>> a107c747a25bb24a9cbce736ac9d02f0f3a36d62
   }
 
   //This function is called every robot packet, no matter the mode
