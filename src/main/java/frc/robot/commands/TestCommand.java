@@ -16,13 +16,15 @@ import  frc.robot.subsystems.*;
 
 public class TestCommand extends Command {
 
-  Encoder enc = Robot.m_subsystem.getEnc();
-  Talon motor = Robot.m_subsystem.getMotor();
+  Encoder enc;
+  Talon motor;
 
-  public void TestCommand(){
+  public TestCommand(){
     requires(Robot.m_subsystem);
-    motor.set(0.4);
     System.out.println("TestCommand Made");
+    enc = Robot.m_subsystem.getEnc();
+    motor = Robot.m_subsystem.getMotor();
+    motor.set(1);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -41,10 +43,10 @@ public class TestCommand extends Command {
     double rate = enc.getRate();
     boolean direction = enc.getDirection();
     boolean stopped = enc.getStopped();
-    System.out.println(count + "count" );
-    System.out.println(rate + "rate");
-    System.out.println(direction + "diretion");
-    System.out.println(stopped + "stopped");
+    System.out.println(count + " count" );
+    System.out.println(rate + " rate");
+    System.out.println(direction + " diretion");
+    System.out.println(stopped + " stopped");
   }
 
   // Make this return true when this Command no longer needs to run execute()
