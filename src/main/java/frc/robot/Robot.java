@@ -41,6 +41,7 @@ public class Robot extends TimedRobot {
     // chooser.addOption("My Auto", new MyAutoCommand());
     //SmartDashboard.putData("Auto mode", m_chooser);
     CameraServer.getInstance().startAutomaticCapture();
+    
   }
 
   //This function is called every robot packet, no matter the mode
@@ -102,6 +103,7 @@ public class Robot extends TimedRobot {
     /*if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     } */
+    new ArcadeDrive();
   }
 
   //This function is called periodically during operator control.
