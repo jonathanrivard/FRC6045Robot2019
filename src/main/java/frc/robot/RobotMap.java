@@ -2,10 +2,10 @@ package frc.robot;
 
 public class RobotMap {
   //Claw JOYSTICK
-    public static int CLAW_JOYSTICK = 0;
-    public static int CLAW_JOYSTICK_TRIGGER = 1;
-    public static int CLAW_JOYSTICK_THUMB = 2;
-    public static int CLAW_JOYSTICK_BUTTON = 3;
+    public static int CONTROL_JOYSTICK = 0;
+    public static int CONTROL_JOYSTICK_TRIGGER = 1;
+    public static int CONTROL_JOYSTICK_THUMB = 2;
+    public static int CONTROL_JOYSTICK_BUTTON = 3;
     // Movement JOYSTICK
     public static int JOYSTICK_LEFT = 1;
 public static int JOYSTICK_RIGHT = 2;
