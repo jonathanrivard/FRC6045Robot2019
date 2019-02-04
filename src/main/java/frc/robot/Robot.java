@@ -26,6 +26,7 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   //Commands
   public static ArcadeDrive m_arcadeDrive;
+  public static TankDrive m_tankDrive;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -37,6 +38,7 @@ public class Robot extends TimedRobot {
     m_lift = new Lift();
     m_oi = new OI();
     m_arcadeDrive = new ArcadeDrive();
+    m_tankDrive = new TankDrive();
     //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     //SmartDashboard.putData("Auto mode", m_chooser);
@@ -103,7 +105,7 @@ public class Robot extends TimedRobot {
     /*if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     } */
-    m_arcadeDrive.start();
+    m_tankDrive.start();
   }
 
   //This function is called periodically during operator control.

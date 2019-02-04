@@ -9,6 +9,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 public class TankDrive extends Command {
   public TankDrive() {
@@ -27,9 +28,9 @@ public class TankDrive extends Command {
   protected void execute() {
     double leftSpeed = Robot.m_oi.leftJoystick.getY();
     double rightSpeed = Robot.m_oi.rightJoystick.getY();
-    double scaler = Robot.m_oi.controlJoystick.getThrottle();
-    scaler = (scaler * -1 + 1) / 2;
-    Robot.m_drivetrain.tankDrive(leftSpeed * scaler, rightSpeed * scaler);
+    double scaler = Robot.m_oi.leftJoystick.getThrottle();
+    scaler = ((scaler * -1 + 1) / 2) * RobotMap.SCALER_DRIVE;
+    Robot.m_drivetrain.tankDrive(leftSpeed * scaler * -1, rightSpeed * scaler * -1);
   }
 
   // Make this return true when this Command no longer needs to run execute()
