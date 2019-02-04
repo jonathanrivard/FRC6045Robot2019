@@ -17,9 +17,9 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class OI {
   public Joystick joystick = new Joystick(0);
-  Button buttonTrigger = new JoystickButton(joystick, RobotMap.JOYSTICK_TRIGGER);
-  Button buttonThumb = new JoystickButton(joystick, RobotMap.JOYSTICK_THUMB);
-  Button button = new JoystickButton(joystick, RobotMap.JOYSTICK_BUTTON);
+  Button buttonTrigger = new JoystickButton(joystick, RobotMap.CLAW_JOYSTICK_TRIGGER);
+  Button buttonThumb = new JoystickButton(joystick, RobotMap.CLAW_JOYSTICK_THUMB);
+  Button button = new JoystickButton(joystick, RobotMap.CLAW_JOYSTICK_BUTTON);
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.
