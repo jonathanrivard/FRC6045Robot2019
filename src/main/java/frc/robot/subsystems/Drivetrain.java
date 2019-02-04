@@ -44,6 +44,10 @@ public class Drivetrain extends Subsystem {
     drive.arcadeDrive(xSpeed, zRotation);
   }
 
+  public void tankDrive(double leftSpeed, double rightSpeed){
+    drive.tankDrive(leftSpeed, rightSpeed);
+  }
+
   public void test(){
     System.out.println("Test");
   }

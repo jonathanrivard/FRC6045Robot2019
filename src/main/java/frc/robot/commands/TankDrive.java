@@ -7,15 +7,11 @@
 
 package frc.robot.commands;
 
-import frc.robot.OI;
-import frc.robot.Robot;
-import frc.robot.subsystems.Drivetrain;
-
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
-public class ArcadeDrive extends Command {
-
-  public ArcadeDrive() {
+public class TankDrive extends Command {
+  public TankDrive() {
     requires(Robot.m_drivetrain);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -29,11 +25,10 @@ public class ArcadeDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double xSpeed = Robot.m_oi.joystick.getY();
-    double zRotate = Robot.m_oi.joystick.getX();
-    double scaler = Robot.m_oi.joystick.getThrottle();
-    scaler = (scaler * -1 + 1) / 2;
-    Robot.m_drivetrain.arcadeDrive(xSpeed * -1 * scaler, zRotate * scaler);
+    double leftSpeed = 0;
+    double rightSpeed = 0;
+
+    Robot.m_drivetrain.tankDrive(leftSpeed, rightSpeed);
   }
 
   // Make this return true when this Command no longer needs to run execute()
