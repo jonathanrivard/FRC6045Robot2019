@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
   public Joystick controlJoystick = new Joystick(0);
   public Joystick leftJoystick = new Joystick(1);
-  public Joystick righJoystick = new Joystick(2);
+  public Joystick rightJoystick = new Joystick(2);
   Button buttonTrigger = new JoystickButton(controlJoystick, RobotMap.CONTROL_JOYSTICK_TRIGGER);
   Button buttonThumb = new JoystickButton(controlJoystick, RobotMap.CONTROL_JOYSTICK_THUMB);
   Button button = new JoystickButton(controlJoystick, RobotMap.CONTROL_JOYSTICK_BUTTON);

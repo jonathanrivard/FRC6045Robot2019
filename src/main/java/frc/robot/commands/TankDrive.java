@@ -25,10 +25,11 @@ public class TankDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double leftSpeed = 0;
-    double rightSpeed = 0;
-
-    Robot.m_drivetrain.tankDrive(leftSpeed, rightSpeed);
+    double leftSpeed = Robot.m_oi.leftJoystick.getY();
+    double rightSpeed = Robot.m_oi.rightJoystick.getY();
+    double scaler = Robot.m_oi.controlJoystick.getThrottle();
+    scaler = (scaler * -1 + 1) / 2;
+    Robot.m_drivetrain.tankDrive(leftSpeed * scaler, rightSpeed * scaler);
   }
 
   // Make this return true when this Command no longer needs to run execute()
