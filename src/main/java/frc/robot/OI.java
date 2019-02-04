@@ -16,10 +16,12 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-  public Joystick joystick = new Joystick(0);
-  Button buttonTrigger = new JoystickButton(joystick, RobotMap.JOYSTICK_TRIGGER);
-  Button buttonThumb = new JoystickButton(joystick, RobotMap.JOYSTICK_THUMB);
-  Button button = new JoystickButton(joystick, RobotMap.JOYSTICK_BUTTON);
+  public Joystick controlJoystick = new Joystick(0);
+  public Joystick leftJoystick = new Joystick(1);
+  public Joystick righJoystick = new Joystick(2);
+  Button buttonTrigger = new JoystickButton(controlJoystick, RobotMap.CONTROL_JOYSTICK_TRIGGER);
+  Button buttonThumb = new JoystickButton(controlJoystick, RobotMap.CONTROL_JOYSTICK_THUMB);
+  Button button = new JoystickButton(controlJoystick, RobotMap.CONTROL_JOYSTICK_BUTTON);
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.

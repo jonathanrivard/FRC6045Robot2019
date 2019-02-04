@@ -29,11 +29,12 @@ public class ArcadeDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double xSpeed = Robot.m_oi.joystick.getY();
-    double zRotate = Robot.m_oi.joystick.getX();
-    double scaler = Robot.m_oi.joystick.getThrottle();
+    double xSpeed = Robot.m_oi.controlJoystick.getY();
+    double zRotate = Robot.m_oi.controlJoystick.getX();
+    double scaler = Robot.m_oi.controlJoystick.getThrottle();
     scaler = (scaler * -1 + 1) / 2;
     Robot.m_drivetrain.arcadeDrive(xSpeed * -1 * scaler, zRotate * scaler);
+   
   }
 
   // Make this return true when this Command no longer needs to run execute()
