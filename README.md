@@ -9,3 +9,6 @@ http://first.wpi.edu/FRC/roborio/release/docs/java/
 
 Tutorial bot link:
 https://github.com/FRCTeam3255/FRC-Java-Tutorial/
+
+Programming Done Right:
+https://media.readthedocs.org/pdf/frc-pdr/latest/frc-pdr.pdf
