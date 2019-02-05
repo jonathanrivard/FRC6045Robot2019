@@ -47,7 +47,7 @@ public class ExampleSubsystem extends Subsystem {
 		enc.setSamplesToAverage(7);
 
 		public void setRate(){
-			//this.setpoint = setpoint;
+			
 		}
 
 	}
