@@ -8,19 +8,22 @@
 package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.PIDSourceType;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.TestCommand;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 /**
  * Add your docs here.
  */
 public class ExampleSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
-  // here. Call these from Commands.
-  TalonSRX testMotor = null;
+	// here. Call these from Commands.
+	TalonSRX testMotor = null;
 	Encoder enc;
 	
 	public Encoder getEnc() { return enc; }
@@ -35,8 +38,8 @@ public class ExampleSubsystem extends Subsystem {
   public ExampleSubsystem(){
 		//Create motor
 		testMotor = new TalonSRX(RobotMap.TEST_MOTOR);
-    testMotor.setInverted(false);
-		
+		testMotor.setInverted(false);
+		/*
 		//Create encoder
 		enc = new Encoder(0,1,false, Encoder.EncodingType.k4X);
 		enc.setPIDSourceType(PIDSourceType.kRate);
@@ -45,10 +48,12 @@ public class ExampleSubsystem extends Subsystem {
 		enc.setDistancePerPulse(5);
 		enc.setReverseDirection(true);
 		enc.setSamplesToAverage(7);
+		*/
+  }
 
 	
 
-	}
+
 	public void setRate(){
 			
 	}
