@@ -46,12 +46,12 @@ public class ExampleSubsystem extends Subsystem {
 		enc.setReverseDirection(true);
 		enc.setSamplesToAverage(7);
 
-		public void setRate(){
-			
-		}
+	
 
 	}
-	
+	public void setRate(){
+			
+	}
   
 /*
 package frc.robot.subsystems;
