@@ -7,6 +7,7 @@
 
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
@@ -37,6 +38,7 @@ public class TestCommand extends Command {
   protected void initialize() {
     System.out.println("TestCommand Init");
     enc = Robot.m_subsystem.getEnc();
+    enc.setPIDSourceType(PIDSourceType.kRate);
     motor = Robot.m_subsystem.getMotor();
   }
 
