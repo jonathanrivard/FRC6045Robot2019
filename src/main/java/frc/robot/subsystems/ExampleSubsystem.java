@@ -8,7 +8,7 @@
 package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Encoder;
-
+import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.TestCommand;
@@ -38,7 +38,8 @@ public class ExampleSubsystem extends Subsystem {
     testMotor.setInverted(false);
 		
 		//Create encoder
-    enc = new Encoder(0,1,false, Encoder.EncodingType.k4X);
+		enc = new Encoder(0,1,false, Encoder.EncodingType.k4X);
+		enc.setPIDSourceType(PIDSourceType.kRate);
     enc.setMaxPeriod(.1);
 		enc.setMinRate(10);
 		enc.setDistancePerPulse(5);
