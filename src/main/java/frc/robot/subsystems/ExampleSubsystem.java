@@ -50,6 +50,13 @@ public class ExampleSubsystem extends Subsystem {
 		enc.setSamplesToAverage(7);
 		*/
   }
+
+	
+
+
+	public void setRate(){
+			
+	}
   
 /*
 package frc.robot.subsystems;
