@@ -45,7 +45,13 @@ public class ExampleSubsystem extends Subsystem {
 		enc.setDistancePerPulse(5);
 		enc.setReverseDirection(true);
 		enc.setSamplesToAverage(7);
-  }
+
+		public void setRate(){
+			//this.setpoint = setpoint;
+		}
+
+	}
+	
   
 /*
 package frc.robot.subsystems;
