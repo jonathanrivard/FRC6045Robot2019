@@ -21,3 +21,6 @@ http://www.ctr-electronics.com/control-system/hro.html#product_tabs_technical_re
 
 Pheonix Documentation
 http://www.ctr-electronics.com/downloads/api/java/html/classcom_1_1ctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_talon_s_r_x.html#a9c2823993741b892c3bfc6d52671f090
+
+PID Basics
+https://www.youtube.com/watch?v=wkfEZmsQqiA
