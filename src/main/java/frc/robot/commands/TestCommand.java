@@ -20,9 +20,10 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 public class TestCommand extends Command {
 
-  Encoder enc;
   TalonSRX motor;
   double speed;
+  int lastError = 0;
+  int errorSum = 0;
 
   public TestCommand(double speed){
     requires(Robot.m_subsystem);
@@ -37,8 +38,27 @@ public class TestCommand extends Command {
   @Override
   protected void initialize() {
     System.out.println("TestCommand Init");
-    enc = Robot.m_subsystem.getEnc();
     motor = Robot.m_subsystem.getMotor();
+    motor.configPeakCurrentDuration(0, 30);
+    /*
+    motor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Absolute, 0, 30);
+    //motor.setSelectedSensorPosition(motor.getSensorCollection().getQuadraturePosition()); */
+    
+    motor.setSelectedSensorPosition(0);
+
+    /*motor.setSensorPhase(true);
+    motor.setInverted(false);
+    motor.configNominalOutputForward(0, 30);
+    motor.configNominalOutputReverse(0, 30);
+    motor.configPeakOutputForward(1, 30);
+    motor.configPeakOutputReverse(1, 30);
+
+    motor.config_kF(0, 0, 30);
+    motor.config_kP(0, 0.15, 30);
+    motor.config_kI(0, 0, 30);
+    motor.config_kD(0, 1, 30);
+    */
+
   }
 
    
@@ -46,24 +66,35 @@ public class TestCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    motor.set(ControlMode.PercentOutput, 0.2);
-    
-    System.out.println(motor.getSensorCollection());
-    System.out.println(motor.getSelectedSensorPosition());
-    System.out.println(motor.getSelectedSensorVelocity());
-    System.out.println();
-    System.out.println();
+    int error;
+    int target = 4096 * 2;
+    int position = motor.getSelectedSensorPosition();
+
+    System.out.println("Target:" + target);
+    motor.set(ControlMode.Position, target);
+
 
     /*
-    int count = enc.get();
-    double rate = enc.getRate();
-    boolean direction = enc.getDirection();
-    boolean stopped = enc.getStopped();
-    System.out.println(count + " count" );
-    System.out.println(rate + " rate");
-    System.out.println(direction + " diretion");
-    System.out.println(stopped + " stopped"); 
+    int position = 4096 * 2;
+    int current = motor.getSelectedSensorPosition();
+    int error = position - current;
+
+    if(error > 4096){
+      motor.set(ControlMode.PercentOutput, 0.2);
+      System.out.println("POSITIVE");
+    }else if(error < -4096){
+      motor.set(ControlMode.PercentOutput, -0.2);
+      System.out.println("NEGITIVE");
+    }else {
+      motor.set(ControlMode.PercentOutput, 0);
+      System.out.println("ZERO");
+    }
+    
+    System.out.println("Current:" + current);
+    System.out.println("Target:" + position);
+    System.out.println("Error:" + error);
     */
+
   }
 
   // Make this return true when this Command no longer needs to run execute()
