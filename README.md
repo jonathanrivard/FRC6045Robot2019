@@ -31,7 +31,7 @@ errorSum = 0;
 
 
 
-while (error > tolerance)
+while/if (error > tolerance)
 {
     error = target - position
 
