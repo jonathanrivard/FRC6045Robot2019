@@ -24,7 +24,16 @@ public class ManualLift extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_lift.setPercentage(Robot.m_oi.getLiftDirection() * RobotMap.SCLAER_LIFT);
+    int direction = Robot.m_oi.getLiftDirection(); //Save the direction to a variable
+    
+    if(Robot.m_lift.getTopLimit() && direction > 0){ //If the top limit is pressed and we are tring to go up
+      Robot.m_lift.setPercentage(0); //Then don't
+    }else if(Robot.m_lift.getBottomLimit() && direction < 0){//If the bottom limit is pressed and we are tring to go down
+      Robot.m_lift.setPercentage(0); //Then don't
+    }else { //If neither of those
+      Robot.m_lift.setPercentage(direction * RobotMap.SCALER_LIFT); //Set the lift speed
+    }
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()

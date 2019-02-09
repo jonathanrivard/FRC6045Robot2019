@@ -27,7 +27,7 @@ public class RobotMap {
     public static int MOTOR_RIGHT_BACK = 0;
     //SCALER
     public static float SCALER_DRIVE = 0.7f;
-    public static float SCLAER_LIFT = 0.3f;
+    public static float SCALER_LIFT = 0.3f;
     //LIFT POSITIONS
     public static int POS_ONE = 0; //Top Ball Height
     public static int POS_TWO = 0; //Second to Top Height
