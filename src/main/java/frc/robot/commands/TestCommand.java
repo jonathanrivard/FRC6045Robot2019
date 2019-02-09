@@ -6,6 +6,7 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.Talon;
@@ -24,6 +25,7 @@ public class TestCommand extends Command {
   double speed;
   int lastError = 0;
   int errorSum = 0;
+  DigitalInput limitSwitch;
 
   public TestCommand(double speed){
     requires(Robot.m_subsystem);
