@@ -81,20 +81,19 @@ public class TestCommand extends Command {
   protected void execute() {
     int target = 4096 * 2;
 
-    System.out.println("Target:" + target);
-    motor.set(ControlMode.Position, target);
+    //motor.set(ControlMode.Position, target);
 
-    if (limitSwitch.get() && limitCounter > 1000){
-      Timer.delay(.01);
+    if (limitSwitch.get() && limitCounter > 100){
       System.out.println("Front Limit Switch Activated");
       limitCounter = 0;
     }
       
-    if (limitSwitch2.get()  && limitCounter > 1000){
-      Timer.delay(.01);
+    if (limitSwitch2.get()  && limitCounter > 100){
       System.out.println("Back Limit Switch Activated");
       limitCounter = 0;
     }
+
+    limitCounter++;
 
     }
 
