@@ -22,11 +22,26 @@ public class OI {
   Button button1 = new JoystickButton(joystick, RobotMap.BUTTON_TRIGGER);
   Button button2 = new JoystickButton(joystick, RobotMap.BUTTON_THUMB);
   Button button3 = new JoystickButton(joystick, RobotMap.BUTTON_THREE);
+  Button position1 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_ONE);
+  Button position2 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_TWO);
+  Button position3 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_THREE);
+  Button position4 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_FOUR);
+  Button position5 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_FIVE);
+  Button position6 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_SIX);
+  Button position7 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_SEVEN);
+  Button position8 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_EIGHT);
 public OI(){
   
   button1.whileHeld(new MoveLift(4096 * 2));
   button2.whileHeld(new MoveLift(0));
-
+  position1.whileHeld(command);
+  position2.whileHeld(command);
+  position3.whileHeld(command);
+  position4.whileHeld(command);
+  position5.whileHeld(command);
+  position6.whileHeld(command);
+  position7.whileHeld(command);
+  position8.whileHeld(command);
 }
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
