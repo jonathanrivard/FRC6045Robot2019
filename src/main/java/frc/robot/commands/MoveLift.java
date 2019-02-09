@@ -22,6 +22,7 @@ public class MoveLift extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    System.out.println("Setting to position: " + position);
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -40,6 +41,7 @@ public class MoveLift extends Command {
   @Override
   protected void end() {
     Robot.m_Lift.setPercentage(0);
+    System.out.println("Ended " + position);
   }
 
   // Called when another command which requires one or more of the same
