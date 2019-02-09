@@ -20,14 +20,14 @@ public class RobotMap {
     public static int LIMIT_SWITCH_FRONT = 9;
     public static int LIMIT_SWITCH_BACK = 8;
     //Lift Positions
-    public static int LIFT_POSITION_ONE = 1;// Top ball hole
-    public static int LIFT_POSITION_TWO = 2;//Top hatch hole
-    public static int LIFT_POSITION_THREE = 3;//Middle ball hole
-    public static int LIFT_POSITION_FOUR = 4;//Middle hatch hole
-    public static int LIFT_POSITION_FIVE = 5;//Bottom ball hole
-    public static int LIFT_POSITION_SIX = 6;//Bottom hatch hole & cargo ship hatch pannel
-    public static int LIFT_POSITION_SEVEN = 7;//Cargo ship ball drop
-    public static int LIFT_POSITION_EIGHT = 8;//Bottom position
+    public static int LIFT_POSITION_ONE = 7;// Top ball hole
+    public static int LIFT_POSITION_TWO = 8;//Top hatch hole
+    public static int LIFT_POSITION_THREE = 9;//Middle ball hole
+    public static int LIFT_POSITION_FOUR = 10;//Middle hatch hole
+    public static int LIFT_POSITION_FIVE = 11;//Bottom ball hole
+    public static int LIFT_POSITION_SIX = 12;//Bottom hatch hole & cargo ship hatch pannel
+    public static int LIFT_POSITION_SEVEN = 3;//Cargo ship ball drop
+    public static int LIFT_POSITION_EIGHT = 4;//Bottom position
     //Scalers
     public static float SCALER_PUSHER = 0.3f;
 }
