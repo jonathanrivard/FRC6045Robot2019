@@ -32,7 +32,7 @@ public class OI {
   Button position8 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_EIGHT);
 public OI(){
   
-  button1.whileHeld(new MoveLift(4096 * 2));
+  button1.whileHeld(new MoveLift(40000));
   button2.whileHeld(new MoveLift(0));
   /*
   position1.whileHeld(command);

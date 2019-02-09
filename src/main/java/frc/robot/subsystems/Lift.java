@@ -27,7 +27,7 @@ public class Lift extends Subsystem {
   //Constuctor
   public Lift(){
     liftMotor = new TalonSRX(0);
-    liftMotor.setInverted(false);
+    //liftMotor.setInverted(false);
     liftMotor.configPeakCurrentDuration(0, 30);
     liftMotor.setSelectedSensorPosition(0);
   }
@@ -43,7 +43,22 @@ public class Lift extends Subsystem {
   }
 
   public void setPercentage(double per){
-    liftMotor.set(ControlMode.PercentOutput, per);
+    //liftMotor.set(ControlMode.PercentOutput, per);
+    ///*
+    if(per > 0){
+      //liftMotor.setInverted(false);
+      //liftMotor.setSensorPhase(false);
+      liftMotor.set(ControlMode.PercentOutput, per);
+    }else if(per < 0){
+      //liftMotor.setInverted(true);
+      //liftMotor.setSensorPhase(true);
+      liftMotor.set(ControlMode.PercentOutput, per);
+    }else {
+      //liftMotor.setInverted(false);
+      //liftMotor.setSensorPhase(false);
+      liftMotor.set(ControlMode.PercentOutput, 0);
+    }
+    //*/
   }
 
   public void setCurrentPosition(int pos){

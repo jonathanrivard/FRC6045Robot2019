@@ -6,15 +6,14 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
-
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class MoveLift extends Command {
 
-  int position;
+  long position;
 
-  public MoveLift(int position) {
+  public MoveLift(long position) {
     requires(Robot.m_Lift);
     this.position = position;
   }
@@ -28,13 +27,15 @@ public class MoveLift extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    int current = Robot.m_Lift.getLiftMotor().getSelectedSensorPosition();
-    int error = position - current;
+    long current = Robot.m_Lift.getLiftMotor().getSelectedSensorPosition();
+    long error = position - current;
 
-    if(error > 4096){
-      Robot.m_Lift.setPercentage(0.2);
-    }else if (error > 4096){
-      Robot.m_Lift.setPercentage(-0.2);
+    System.out.println(error + " ; " + current);
+
+    if(error > 1000){
+      Robot.m_Lift.setPercentage(0.05);
+    }else if (error < -1000){
+      Robot.m_Lift.setPercentage(-0.05);
     }else {
       Robot.m_Lift.setPercentage(0);
     }
@@ -43,7 +44,7 @@ public class MoveLift extends Command {
 
 
     //Robot.m_Lift.setPosition(position);
-    System.out.println(Robot.m_Lift.getLiftMotor().getSelectedSensorPosition());
+    //System.out.println(Robot.m_Lift.getLiftMotor().getSelectedSensorPosition());
   }
 
   // Make this return true when this Command no longer needs to run execute()
