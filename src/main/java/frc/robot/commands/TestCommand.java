@@ -49,7 +49,7 @@ public class TestCommand extends Command {
     
     motor.setSelectedSensorPosition(0);
    
-    limitSwitch = new DigitalInput(9);
+    limitSwitch = new DigitalInput(RobotMap.LIMIT_SWITCH_FRONT);
 
     /*motor.setSensorPhase(true);
     motor.setInverted(false);
@@ -81,9 +81,18 @@ public class TestCommand extends Command {
     System.out.println("Target:" + target);
     motor.set(ControlMode.Position, target);
 
-    while (limitSwitch.get()){
+    if (limitSwitch.get()){
       Timer.delay(.01);
       System.out.println("Front Limit Switch Activated");
+
+      DigitalInput limitSwitch2;
+
+      limitSwitch2 = new DigitalInput(RobotMap.LIMIT_SWITCH_BACK);
+      if (limitSwitch2.get()){
+        Timer.delay(.01);
+        System.out.println();
+      }
+
     }
   }
 
