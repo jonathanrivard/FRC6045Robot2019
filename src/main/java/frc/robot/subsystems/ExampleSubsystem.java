@@ -39,25 +39,7 @@ public class ExampleSubsystem extends Subsystem {
 		//Create motor
 		testMotor = new TalonSRX(RobotMap.TEST_MOTOR);
 		testMotor.setInverted(false);
-		
-		
-		//Create encoder
-		enc = new Encoder(0,1,false, Encoder.EncodingType.k4X);
-		enc.setPIDSourceType(PIDSourceType.kDisplacement);
-    	enc.setMaxPeriod(.1);
-		enc.setMinRate(10);
-		enc.setDistancePerPulse(5);
-		enc.setReverseDirection(true);
-		enc.setSamplesToAverage(7);
-		
   }
-
-	
-
-
-	public void setRate(){
-		
-	}
   
 /*
 package frc.robot.subsystems;
