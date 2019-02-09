@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
+import frc.robot.commands.MoveLift;
 import frc.robot.commands.RotatePusher;
 import frc.robot.commands.TestCommand;
 
@@ -23,10 +24,8 @@ public class OI {
   Button button3 = new JoystickButton(joystick, RobotMap.BUTTON_THREE);
 public OI(){
   
-  button1.whileHeld(new TestCommand(1));
-  button2.whileHeld(new RotatePusher(-1));
-  //button3.whileHeld(new TestCommand());
-
+  button1.whileHeld(new MoveLift(4096 * 2));
+  button2.whileHeld(new MoveLift(0));
 
 }
   //// CREATING BUTTONS

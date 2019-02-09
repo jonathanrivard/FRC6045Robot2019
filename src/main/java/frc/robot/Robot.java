@@ -21,6 +21,8 @@ import frc.robot.subsystems.DriveTrain;
 import frc.robot.commands.Tilt;
 import frc.robot.commands.Grab;
 import frc.robot.commands.Intake;
+import frc.robot.commands.ManualLift;
+import frc.robot.commands.MoveLift;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -30,12 +32,16 @@ import frc.robot.commands.Intake;
  * project.
  */
 public class Robot extends TimedRobot {
+  //Subsystem
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static DriveTrain m_drivetrain = new DriveTrain();
   public static Pusher m_Pusher = new Pusher();
   public static Claw m_Claw = new Claw();
   public static Lift m_Lift = new Lift();
+  //OI
   public static OI m_oi = new OI();
+  //Commands
+  //None currently needed
 
 
   Command m_autonomousCommand;

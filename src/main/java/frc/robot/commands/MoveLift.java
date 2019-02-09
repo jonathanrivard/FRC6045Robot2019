@@ -11,10 +11,12 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class MoveLift extends Command {
+
+  int position;
+
   public MoveLift(int position) {
     requires(Robot.m_Lift);
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    this.position = position;
   }
 
   // Called just before this Command runs the first time
@@ -25,6 +27,7 @@ public class MoveLift extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    Robot.m_Lift.setPosition(position);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -36,11 +39,13 @@ public class MoveLift extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.m_Lift.setPercentage(0);
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }
