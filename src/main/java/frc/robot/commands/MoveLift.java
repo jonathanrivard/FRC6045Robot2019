@@ -10,7 +10,8 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class MoveLift extends Command {
-  public MoveLift() {
+  public MoveLift(int position) {
+    
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
