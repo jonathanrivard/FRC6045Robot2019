@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Lift;
 import frc.robot.subsystems.Pusher;
 import frc.robot.subsystems.Claw;
 import frc.robot.subsystems.DriveTrain;
@@ -33,6 +34,7 @@ public class Robot extends TimedRobot {
   public static DriveTrain m_drivetrain = new DriveTrain();
   public static Pusher m_Pusher = new Pusher();
   public static Claw m_Claw = new Claw();
+  public static Lift m_Lift = new Lift();
   public static OI m_oi = new OI();
 
 
