@@ -38,27 +38,9 @@ public class TestCommand extends Command {
   @Override
   protected void initialize() {
     System.out.println("TestCommand Init");
-    motor = Robot.m_subsystem.getMotor();
-    motor.configPeakCurrentDuration(0, 30);
-    /*
-    motor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Absolute, 0, 30);
-    //motor.setSelectedSensorPosition(motor.getSensorCollection().getQuadraturePosition()); */
-    
-    motor.setSelectedSensorPosition(0);
-
-    /*motor.setSensorPhase(true);
-    motor.setInverted(false);
-    motor.configNominalOutputForward(0, 30);
-    motor.configNominalOutputReverse(0, 30);
-    motor.configPeakOutputForward(1, 30);
-    motor.configPeakOutputReverse(1, 30);
-
-    motor.config_kF(0, 0, 30);
-    motor.config_kP(0, 0.15, 30);
-    motor.config_kI(0, 0, 30);
-    motor.config_kD(0, 1, 30);
-    */
-
+    motor = Robot.m_subsystem.getMotor(); //Get the motor from the subsysytem
+    motor.configPeakCurrentDuration(0, 30); //Mystery code that just works
+    motor.setSelectedSensorPosition(0); //Set current position to 0
   }
 
    
@@ -66,35 +48,10 @@ public class TestCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    int error;
     int target = 4096 * 2;
-    int position = motor.getSelectedSensorPosition();
 
     System.out.println("Target:" + target);
     motor.set(ControlMode.Position, target);
-
-
-    /*
-    int position = 4096 * 2;
-    int current = motor.getSelectedSensorPosition();
-    int error = position - current;
-
-    if(error > 4096){
-      motor.set(ControlMode.PercentOutput, 0.2);
-      System.out.println("POSITIVE");
-    }else if(error < -4096){
-      motor.set(ControlMode.PercentOutput, -0.2);
-      System.out.println("NEGITIVE");
-    }else {
-      motor.set(ControlMode.PercentOutput, 0);
-      System.out.println("ZERO");
-    }
-    
-    System.out.println("Current:" + current);
-    System.out.println("Target:" + position);
-    System.out.println("Error:" + error);
-    */
-
   }
 
   // Make this return true when this Command no longer needs to run execute()
