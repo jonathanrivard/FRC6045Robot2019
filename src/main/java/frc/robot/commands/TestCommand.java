@@ -49,7 +49,7 @@ public class TestCommand extends Command {
     
     motor.setSelectedSensorPosition(0);
    
-    limitSwitch = new DigitalInput(1);
+    limitSwitch = new DigitalInput(9);
 
     /*motor.setSensorPhase(true);
     motor.setInverted(false);
