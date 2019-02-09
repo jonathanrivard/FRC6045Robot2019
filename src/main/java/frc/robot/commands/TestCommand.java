@@ -27,7 +27,7 @@ public class TestCommand extends Command {
   int lastError = 0;
   int errorSum = 0;
   DigitalInput limitSwitch;
-  DigitalInput limitSwitch2;
+  int limitCounter = 0;
 
   public TestCommand(double speed){
     requires(Robot.m_subsystem);
