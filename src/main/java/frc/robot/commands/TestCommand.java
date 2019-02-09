@@ -65,9 +65,9 @@ public class TestCommand extends Command {
 
 
 
-    motor = Robot.m_subsystem.getMotor(); //Get the motor from the subsysytem
+   /* motor = Robot.m_subsystem.getMotor(); //Get the motor from the subsysytem
     motor.configPeakCurrentDuration(0, 30); //Mystery code that just works
-    motor.setSelectedSensorPosition(0); //Set current position to 0
+    motor.setSelectedSensorPosition(0); //Set current position to 0 */
   }
 
    
@@ -77,7 +77,7 @@ public class TestCommand extends Command {
   protected void execute() {
     int target = 4096 * 2;
    
-    motor.set(ControlMode.PercentOutput, 0.0);
+    motor.set(ControlMode.PercentOutput, -0.05);
     System.out.println("TestCommand Ended");
 
     //motor.set(ControlMode.Position, target);
