@@ -34,6 +34,7 @@ public OI(){
   
   button1.whileHeld(new MoveLift(4096 * 2));
   button2.whileHeld(new MoveLift(0));
+  /*
   position1.whileHeld(command);
   position2.whileHeld(command);
   position3.whileHeld(command);
@@ -41,7 +42,7 @@ public OI(){
   position5.whileHeld(command);
   position6.whileHeld(command);
   position7.whileHeld(command);
-  position8.whileHeld(command);
+  position8.whileHeld(command); */
 }
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
