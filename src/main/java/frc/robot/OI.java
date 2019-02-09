@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.MoveLift;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -35,7 +36,14 @@ public class OI {
   Button buttonPositionEight = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_EIGHT);
   
   public OI(){
-    //OwO
+    buttonPositionOne.whileHeld(new MoveLift(1));
+    buttonPositionTwo.whileHeld(new MoveLift(2));
+    buttonPositionThree.whileHeld(new MoveLift(3));
+    buttonPositionFour.whileHeld(new MoveLift(4));
+    buttonPositionFive.whileHeld(new MoveLift(5));
+    buttonPositionSix.whileHeld(new MoveLift(6));
+    buttonPositionSeven.whileHeld(new MoveLift(7));
+    buttonPositionEight.whileHeld(new MoveLift(8));
   }
 
   public int getLiftDirection(){ //Get if the POV is reading up or down for ManualLift command
