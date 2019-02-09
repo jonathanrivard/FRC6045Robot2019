@@ -8,9 +8,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class ManualLift extends Command {
   public ManualLift() {
+    requires(Robot.m_Lift);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
