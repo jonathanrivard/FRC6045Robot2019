@@ -64,6 +64,8 @@ public class TestCommand extends Command {
     motor.config_kD(0, 1, 30);
     */
 
+    
+
     motor = Robot.m_subsystem.getMotor(); //Get the motor from the subsysytem
     motor.configPeakCurrentDuration(0, 30); //Mystery code that just works
     motor.setSelectedSensorPosition(0); //Set current position to 0
@@ -79,7 +81,7 @@ public class TestCommand extends Command {
     System.out.println("Target:" + target);
     motor.set(ControlMode.Position, target);
 
-    while (limitSwitch.get()){
+    while (!limitSwitch.get()){
       Timer.delay(0);
       System.out.println("Front Limit Switch Activated");
     }
