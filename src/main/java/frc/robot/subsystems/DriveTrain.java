@@ -26,6 +26,11 @@ public class DriveTrain extends Subsystem {
   Talon rightFrontMotor = null;
   Talon rightBackMotor = null;
   DifferentialDrive diff = null;
+  SpeedControllerGroup leftMotors;
+  SpeedControllerGroup rightMotors;
+
+  public SpeedControllerGroup getLeftMotors() { return leftMotors; }
+  public SpeedControllerGroup getRightMotors() { return rightMotors; }
  
   @Override
   public void initDefaultCommand() {
@@ -38,7 +43,10 @@ public class DriveTrain extends Subsystem {
 
   public void arcadeDrive(double xValue, double yValue) {
     diff.arcadeDrive(xValue, yValue);
+  }
 
+  public void tankDrive(double left, double right){
+    diff.tankDrive(left, right);
   }
 
   public DriveTrain() {
@@ -51,8 +59,8 @@ public class DriveTrain extends Subsystem {
     rightBackMotor = new Talon(RobotMap.MOTOR_RIGHT_BACK);
     rightBackMotor.setInverted(false);
 
-    SpeedControllerGroup leftMotors = new SpeedControllerGroup(leftFrontMotor, leftBackMotor);
-    SpeedControllerGroup rightMotors = new SpeedControllerGroup(rightFrontMotor, rightBackMotor);
+    leftMotors = new SpeedControllerGroup(leftFrontMotor, leftBackMotor);
+    rightMotors = new SpeedControllerGroup(rightFrontMotor, rightBackMotor);
 
     diff = new DifferentialDrive(leftMotors, rightMotors);
 
