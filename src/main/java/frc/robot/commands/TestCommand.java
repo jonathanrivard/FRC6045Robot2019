@@ -31,7 +31,7 @@ public class TestCommand extends Command {
   int limitCounter = 0;
 
   public TestCommand(double speed){
-    requires(Robot.m_subsystem);
+    requires(Robot.m_Lift);
     System.out.println("TestCommand Made");
     
     this.speed = speed;
@@ -41,7 +41,7 @@ public class TestCommand extends Command {
   @Override
   protected void initialize() {
     System.out.println("TestCommand Init");
-    motor = Robot.m_subsystem.getMotor();
+    motor = Robot.m_Lift.getLiftMotor();
     motor.configPeakCurrentDuration(0, 30);
     
     
@@ -76,6 +76,9 @@ public class TestCommand extends Command {
   @Override
   protected void execute() {
     int target = 4096 * 2;
+   
+    motor.set(ControlMode.PercentOutput, 0.0);
+    System.out.println("TestCommand Ended");
 
     //motor.set(ControlMode.Position, target);
 
