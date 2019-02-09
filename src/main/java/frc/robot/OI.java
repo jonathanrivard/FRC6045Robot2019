@@ -24,7 +24,7 @@ public class OI {
   Button button3 = new JoystickButton(joystick, RobotMap.BUTTON_THREE);
 public OI(){
   
-  button1.whileHeld(new MoveLift(4096 * 2));
+  button1.whileHeld(new MoveLift(-0.5));
   button2.whileHeld(new MoveLift(0));
 
 }
