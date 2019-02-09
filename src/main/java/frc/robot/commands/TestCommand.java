@@ -24,11 +24,6 @@ public class TestCommand extends Command {
 
   TalonSRX motor;
   double speed;
-  int lastError = 0;
-  int errorSum = 0;
-  DigitalInput limitSwitch;
-  DigitalInput limitSwitch2;
-  int limitCounter = 0;
 
   public TestCommand(double speed){
     requires(Robot.m_Lift);
@@ -46,9 +41,6 @@ public class TestCommand extends Command {
     
     
     motor.setSelectedSensorPosition(0);
-   
-    limitSwitch = new DigitalInput(RobotMap.LIMIT_SWITCH_FRONT);
-    limitSwitch2 = new DigitalInput(RobotMap.LIMIT_SWITCH_BACK);
 
     /*motor.setSensorPhase(true);
     motor.setInverted(false);
@@ -75,25 +67,8 @@ public class TestCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    int target = 4096 * 2;
-   
-    motor.set(ControlMode.PercentOutput, -0.05);
-    System.out.println("TestCommand Ended");
-
-    //motor.set(ControlMode.Position, target);
-
-    if (limitSwitch.get() && limitCounter > 100){
-      System.out.println("Front Limit Switch Activated");
-      limitCounter = 0;
-    }
-      
-    if (limitSwitch2.get()  && limitCounter > 100){
-      System.out.println("Back Limit Switch Activated");
-      limitCounter = 0;
-    }
-
-    limitCounter++;
-
+    motor.set(ControlMode.PercentOutput, -0.02);
+    System.out.println("EXAMACUTING");
     }
 
   // Make this return true when this Command no longer needs to run execute()
