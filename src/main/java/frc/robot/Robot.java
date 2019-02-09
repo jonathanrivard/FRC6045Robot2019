@@ -33,6 +33,7 @@ public class Robot extends TimedRobot {
   public static DriveTrain m_drivetrain = new DriveTrain();
   public static Pusher m_Pusher = new Pusher();
   public static Claw m_Claw = new Claw();
+  public static Lift m_Lift = new Lift();
   public static OI m_oi = new OI();
 
 
