@@ -21,7 +21,8 @@ public class Lift extends Subsystem {
   DigitalInput bottomLimit;
   //Getters
   public TalonSRX getMotor() { return motor; }
-  
+  public boolean getTopLimit() { return topLimit.get(); }
+  public boolean getBottomLimit() { return bottomLimit.get(); }
 
   //Constuctor
   public Lift(){
