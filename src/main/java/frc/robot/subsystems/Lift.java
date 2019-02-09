@@ -7,18 +7,65 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
-/**
- * Add your docs here.
- */
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.commands.ManualLift;
+
 public class Lift extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+
+  //Instance Varibles
+  TalonSRX liftMotor;
+  TalonSRX encoderMotor;
+  DigitalInput topLimit;
+  DigitalInput bottomLimit;
+  //Getters
+  public TalonSRX getLiftMotor() { return liftMotor; }
+  public TalonSRX getEncoderMotor() { return encoderMotor; }
+  public boolean getTopLimit() { return topLimit.get(); }
+  public boolean getBottomLimit() { return bottomLimit.get(); }
+
+  //Constuctor
+  public Lift(){
+    encoderMotor = new TalonSRX(0);
+    liftMotor = new TalonSRX(1);
+    liftMotor.setInverted(false);
+    encoderMotor.configPeakCurrentDuration(0, 30);
+    encoderMotor.setSelectedSensorPosition(0);
+  }
 
   @Override
   public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new ManualLift());
+  }
+
+  //Methods
+  public void setPosition(int pos){
+    liftMotor.set(ControlMode.Position, pos);
+  }
+
+  public void setPercentage(double per){
+    liftMotor.set(ControlMode.PercentOutput, per);
+    /*
+    if(per > 0){
+      //liftMotor.setInverted(false);
+      //liftMotor.setSensorPhase(false);
+      liftMotor.set(ControlMode.PercentOutput, per);
+    }else if(per < 0){
+      //liftMotor.setInverted(true);
+      //liftMotor.setSensorPhase(true);
+      liftMotor.set(ControlMode.PercentOutput, per);
+    }else {
+      //liftMotor.setInverted(false);
+      //liftMotor.setSensorPhase(false);
+      liftMotor.set(ControlMode.PercentOutput, 0);
+    }
+    */
+  }
+
+  public void setCurrentPosition(int pos){
+    liftMotor.setSelectedSensorPosition(pos);
   }
 }
