@@ -11,13 +11,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class MoveLift extends Command {
-<<<<<<< HEAD
 
   int position;
 
-=======
-  int position = 0;
->>>>>>> bad382b29cd0b2226cec4f60b90a6686504f3499
   public MoveLift(int position) {
     requires(Robot.m_Lift);
     this.position = position;
