@@ -47,6 +47,8 @@ public class TestCommand extends Command {
     //motor.setSelectedSensorPosition(motor.getSensorCollection().getQuadraturePosition()); */
     
     motor.setSelectedSensorPosition(0);
+   
+    limitSwitch = new DigitalInput(1);
 
     /*motor.setSensorPhase(true);
     motor.setInverted(false);
@@ -75,6 +77,9 @@ public class TestCommand extends Command {
     System.out.println("Target:" + target);
     motor.set(ControlMode.Position, target);
 
+    while (limitSwitch.get()){
+      System.out.println("Front Limit Switch Activated");
+    }
 
     /*
     int position = 4096 * 2;
