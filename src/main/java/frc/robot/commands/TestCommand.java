@@ -87,11 +87,13 @@ public class TestCommand extends Command {
     if (limitSwitch.get() && limitCounter > 1000){
       Timer.delay(.01);
       System.out.println("Front Limit Switch Activated");
-
+      limitCounter = 0;
+    }
       
     if (limitSwitch2.get()  && limitCounter > 1000){
       Timer.delay(.01);
       System.out.println("Back Limit Switch Activated");
+      limitCounter = 0;
     }
 
     }
