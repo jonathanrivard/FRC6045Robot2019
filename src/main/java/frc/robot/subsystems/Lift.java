@@ -16,20 +16,20 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Lift extends Subsystem {
 
   //Instance Varibles
-  TalonSRX motor;
+  TalonSRX liftMotor;
   DigitalInput topLimit;
   DigitalInput bottomLimit;
   //Getters
-  public TalonSRX getMotor() { return motor; }
+  public TalonSRX getLiftMotor() { return liftMotor; }
   public boolean getTopLimit() { return topLimit.get(); }
   public boolean getBottomLimit() { return bottomLimit.get(); }
 
   //Constuctor
   public Lift(){
-    motor = new TalonSRX(0);
-    motor.setInverted(false);
-    motor.configPeakCurrentDuration(0, 30);
-    motor.setSelectedSensorPosition(0);
+    liftMotor = new TalonSRX(0);
+    liftMotor.setInverted(false);
+    liftMotor.configPeakCurrentDuration(0, 30);
+    liftMotor.setSelectedSensorPosition(0);
   }
 
   @Override
@@ -39,14 +39,14 @@ public class Lift extends Subsystem {
 
   //Methods
   public void setPosition(int pos){
-    motor.set(ControlMode.Position, pos);
+    liftMotor.set(ControlMode.Position, pos);
   }
 
   public void setPercentage(double per){
-    motor.set(ControlMode.PercentOutput, per);
+    liftMotor.set(ControlMode.PercentOutput, per);
   }
 
   public void setCurrentPosition(int pos){
-    motor.setSelectedSensorPosition(pos);
+    liftMotor.setSelectedSensorPosition(pos);
   }
 }
