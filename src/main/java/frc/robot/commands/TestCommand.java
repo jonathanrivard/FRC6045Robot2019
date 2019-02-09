@@ -27,6 +27,7 @@ public class TestCommand extends Command {
   int lastError = 0;
   int errorSum = 0;
   DigitalInput limitSwitch;
+  DigitalInput limitSwitch2;
 
   public TestCommand(double speed){
     requires(Robot.m_subsystem);
@@ -50,6 +51,7 @@ public class TestCommand extends Command {
     motor.setSelectedSensorPosition(0);
    
     limitSwitch = new DigitalInput(RobotMap.LIMIT_SWITCH_FRONT);
+    limitSwitch2 = new DigitalInput(RobotMap.LIMIT_SWITCH_BACK);
 
     /*motor.setSensorPhase(true);
     motor.setInverted(false);
@@ -85,9 +87,7 @@ public class TestCommand extends Command {
       Timer.delay(.01);
       System.out.println("Front Limit Switch Activated");
 
-      DigitalInput limitSwitch2;
-
-      limitSwitch2 = new DigitalInput(RobotMap.LIMIT_SWITCH_BACK);
+      
       if (limitSwitch2.get()){
         Timer.delay(.01);
         System.out.println();
