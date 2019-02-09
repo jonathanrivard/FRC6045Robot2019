@@ -42,6 +42,32 @@ public class TestCommand extends Command {
   @Override
   protected void initialize() {
     System.out.println("TestCommand Init");
+    motor = Robot.m_subsystem.getMotor();
+    motor.configPeakCurrentDuration(0, 30);
+    /*
+    motor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Absolute, 0, 30);
+    //motor.setSelectedSensorPosition(motor.getSensorCollection().getQuadraturePosition()); */
+    
+    motor.setSelectedSensorPosition(0);
+   
+    limitSwitch = new DigitalInput(RobotMap.LIMIT_SWITCH_FRONT);
+    limitSwitch2 = new DigitalInput(RobotMap.LIMIT_SWITCH_BACK);
+
+    /*motor.setSensorPhase(true);
+    motor.setInverted(false);
+    motor.configNominalOutputForward(0, 30);
+    motor.configNominalOutputReverse(0, 30);
+    motor.configPeakOutputForward(1, 30);
+    motor.configPeakOutputReverse(1, 30);
+
+    motor.config_kF(0, 0, 30);
+    motor.config_kP(0, 0.15, 30);
+    motor.config_kI(0, 0, 30);
+    motor.config_kD(0, 1, 30);
+    */
+
+
+
     motor = Robot.m_subsystem.getMotor(); //Get the motor from the subsysytem
     motor.configPeakCurrentDuration(0, 30); //Mystery code that just works
     motor.setSelectedSensorPosition(0); //Set current position to 0
@@ -57,9 +83,16 @@ public class TestCommand extends Command {
     System.out.println("Target:" + target);
     motor.set(ControlMode.Position, target);
 
-    while (limitSwitch.get()){
-      Timer.delay(10);
+    if (limitSwitch.get()){
+      Timer.delay(.01);
       System.out.println("Front Limit Switch Activated");
+
+      
+      if (limitSwitch2.get()){
+        Timer.delay(.01);
+        System.out.println();
+      }
+
     }
   }
 
