@@ -16,6 +16,9 @@ public class RobotMap {
     public static int MOTOR_PUSHER = 4;
     public static int MOTOR_CUBE_LOCK = 7;
     public static int TEST_MOTOR = 0;
+    //Limit switches
+    public static int LIMIT_SWITCH_FRONT = 9;
+public static int LIMIT_SWITCH_BACK = 8;
     //Scalers
     public static float SCALER_PUSHER = 0.3f;
 }

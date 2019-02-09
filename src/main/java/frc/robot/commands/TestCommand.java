@@ -6,9 +6,11 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
@@ -24,6 +26,7 @@ public class TestCommand extends Command {
   double speed;
   int lastError = 0;
   int errorSum = 0;
+  DigitalInput limitSwitch;
 
   public TestCommand(double speed){
     requires(Robot.m_subsystem);
@@ -52,6 +55,11 @@ public class TestCommand extends Command {
 
     System.out.println("Target:" + target);
     motor.set(ControlMode.Position, target);
+
+    while (limitSwitch.get()){
+      Timer.delay(10);
+      System.out.println("Front Limit Switch Activated");
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()

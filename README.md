@@ -24,3 +24,23 @@ http://www.ctr-electronics.com/downloads/api/java/html/classcom_1_1ctre_1_1phoen
 
 PID Basics
 https://www.youtube.com/watch?v=wkfEZmsQqiA
+
+
+lastError = 0;
+errorSum = 0;
+
+
+
+while (error > tolerance)
+{
+    error = target - position
+
+    P = .3 * error
+    I = .01 * errorSum
+    D = 0.01 * (error - lastError)
+
+    motor.set(ControlMode.Postistion, P + I + D)
+
+    lastError = error;
+    errorSum += error;
+}
