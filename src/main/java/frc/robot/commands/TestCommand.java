@@ -90,7 +90,7 @@ public class TestCommand extends Command {
       
       if (limitSwitch2.get()){
         Timer.delay(.01);
-        System.out.println();
+        System.out.println("Back Limit Switch Activated");
       }
 
     }
