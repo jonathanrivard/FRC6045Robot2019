@@ -35,8 +35,6 @@ public class TestCommand extends Command {
     System.out.println("TestCommand Made");
     
     this.speed = speed;
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time
@@ -45,9 +43,7 @@ public class TestCommand extends Command {
     System.out.println("TestCommand Init");
     motor = Robot.m_subsystem.getMotor();
     motor.configPeakCurrentDuration(0, 30);
-    /*
-    motor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Absolute, 0, 30);
-    //motor.setSelectedSensorPosition(motor.getSensorCollection().getQuadraturePosition()); */
+    
     
     motor.setSelectedSensorPosition(0);
    

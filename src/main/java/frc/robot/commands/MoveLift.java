@@ -28,7 +28,22 @@ public class MoveLift extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_Lift.setPosition(position);
+    int current = Robot.m_Lift.getLiftMotor().getSelectedSensorPosition();
+    int error = position - current;
+
+    if(error > 4096){
+      Robot.m_Lift.setPercentage(0.2);
+    }else if (error > 4096){
+      Robot.m_Lift.setPercentage(-0.2);
+    }else {
+      Robot.m_Lift.setPercentage(0);
+    }
+
+
+
+
+    //Robot.m_Lift.setPosition(position);
+    System.out.println(Robot.m_Lift.getLiftMotor().getSelectedSensorPosition());
   }
 
   // Make this return true when this Command no longer needs to run execute()
