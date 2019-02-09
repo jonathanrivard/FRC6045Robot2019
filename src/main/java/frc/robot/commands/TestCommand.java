@@ -27,6 +27,7 @@ public class TestCommand extends Command {
   int lastError = 0;
   int errorSum = 0;
   DigitalInput limitSwitch;
+  DigitalInput limitSwitch2;
   int limitCounter = 0;
 
   public TestCommand(double speed){
@@ -83,15 +84,15 @@ public class TestCommand extends Command {
     System.out.println("Target:" + target);
     motor.set(ControlMode.Position, target);
 
-    if (limitSwitch.get()){
+    if (limitSwitch.get() && limitCounter > 1000){
       Timer.delay(.01);
       System.out.println("Front Limit Switch Activated");
 
       
-      if (limitSwitch2.get()){
-        Timer.delay(.01);
-        System.out.println();
-      }
+    if (limitSwitch2.get()  && limitCounter > 1000){
+      Timer.delay(.01);
+      System.out.println();
+    }
 
     }
   }
