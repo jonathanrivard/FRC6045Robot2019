@@ -18,7 +18,16 @@ public class RobotMap {
     public static int TEST_MOTOR = 0;
     //Limit switches
     public static int LIMIT_SWITCH_FRONT = 9;
-public static int LIMIT_SWITCH_BACK = 8;
+    public static int LIMIT_SWITCH_BACK = 8;
+    //Lift Positions
+    public static int LIFT_POSITION_ONE = 1;
+    public static int LIFT_POSITION_TWO = 2;
+    public static int LIFT_POSITION_THREE = 3;
+    public static int LIFT_POSITION_FOUR = 4;
+    public static int LIFT_POSITION_FIVE = 5;
+    public static int LIFT_POSITION_SIX = 6;
+    public static int LIFT_POSITION_SEVEN = 7;
+    public static int LIFT_POSITION_EIGHT = 8;
     //Scalers
     public static float SCALER_PUSHER = 0.3f;
 }
