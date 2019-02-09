@@ -80,7 +80,7 @@ public class TestCommand extends Command {
     motor.set(ControlMode.Position, target);
 
     while (limitSwitch.get()){
-      Timer.delay(10);
+      Timer.delay(5);
       System.out.println("Front Limit Switch Activated");
     }
   }
