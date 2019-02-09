@@ -17,19 +17,22 @@ public class Lift extends Subsystem {
 
   //Instance Varibles
   TalonSRX liftMotor;
+  TalonSRX encoderMotor;
   DigitalInput topLimit;
   DigitalInput bottomLimit;
   //Getters
   public TalonSRX getLiftMotor() { return liftMotor; }
+  public TalonSRX getEncoderMotor() { return encoderMotor; }
   public boolean getTopLimit() { return topLimit.get(); }
   public boolean getBottomLimit() { return bottomLimit.get(); }
 
   //Constuctor
   public Lift(){
-    liftMotor = new TalonSRX(0);
-    //liftMotor.setInverted(false);
-    liftMotor.configPeakCurrentDuration(0, 30);
-    liftMotor.setSelectedSensorPosition(0);
+    encoderMotor = new TalonSRX(0);
+    liftMotor = new TalonSRX(1);
+    liftMotor.setInverted(false);
+    encoderMotor.configPeakCurrentDuration(0, 30);
+    encoderMotor.setSelectedSensorPosition(0);
   }
 
   @Override
@@ -43,7 +46,7 @@ public class Lift extends Subsystem {
   }
 
   public void setPercentage(double per){
-    liftMotor.set(ControlMode.Velocity, -1);
+    liftMotor.set(ControlMode.PercentOutput, per);
     /*
     if(per > 0){
       //liftMotor.setInverted(false);
