@@ -43,8 +43,8 @@ public class Lift extends Subsystem {
   }
 
   public void setPercentage(double per){
-    //liftMotor.set(ControlMode.PercentOutput, per);
-    ///*
+    liftMotor.set(ControlMode.Velocity, -1);
+    /*
     if(per > 0){
       //liftMotor.setInverted(false);
       //liftMotor.setSensorPhase(false);
@@ -58,7 +58,7 @@ public class Lift extends Subsystem {
       //liftMotor.setSensorPhase(false);
       liftMotor.set(ControlMode.PercentOutput, 0);
     }
-    //*/
+    */
   }
 
   public void setCurrentPosition(int pos){

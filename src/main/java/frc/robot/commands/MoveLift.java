@@ -33,9 +33,9 @@ public class MoveLift extends Command {
     System.out.println(error + " ; " + current);
 
     if(error > 1000){
-      Robot.m_Lift.setPercentage(0.05);
+      Robot.m_Lift.setPercentage(0.1);
     }else if (error < -1000){
-      Robot.m_Lift.setPercentage(-0.05);
+      Robot.m_Lift.setPercentage(-0.1);
     }else {
       Robot.m_Lift.setPercentage(0);
     }

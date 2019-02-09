@@ -67,7 +67,7 @@ public class TestCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    motor.set(ControlMode.PercentOutput, -0.02);
+    motor.set(ControlMode.PercentOutput, -1);
     System.out.println("EXAMACUTING");
     }
 
