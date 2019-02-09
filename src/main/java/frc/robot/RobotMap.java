@@ -30,5 +30,6 @@ public class RobotMap {
     public static int LIFT_POSITION_EIGHT = 4;//Bottom position
     //Scalers
     public static float SCALER_PUSHER = 0.3f;
+    public static float SCLAER_LIFT = 0.3f;
 }
 

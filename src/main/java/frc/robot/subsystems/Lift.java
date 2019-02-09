@@ -12,6 +12,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.commands.ManualLift;
 
 public class Lift extends Subsystem {
 
@@ -37,7 +38,7 @@ public class Lift extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new ManualLift());
   }
 
   //Methods

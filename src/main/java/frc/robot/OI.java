@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
+import frc.robot.commands.ManualLift;
 import frc.robot.commands.MoveLift;
 import frc.robot.commands.RotatePusher;
 import frc.robot.commands.TestCommand;
@@ -22,6 +23,7 @@ public class OI {
   Button button1 = new JoystickButton(joystick, RobotMap.BUTTON_TRIGGER);
   Button button2 = new JoystickButton(joystick, RobotMap.BUTTON_THUMB);
   Button button3 = new JoystickButton(joystick, RobotMap.BUTTON_THREE);
+  Button button4 = new JoystickButton(joystick, 4);
   Button position1 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_ONE);
   Button position2 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_TWO);
   Button position3 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_THREE);
@@ -30,47 +32,41 @@ public class OI {
   Button position6 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_SIX);
   Button position7 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_SEVEN);
   Button position8 = new JoystickButton(joystick, RobotMap.LIFT_POSITION_EIGHT);
-public OI(){
-  
-  button1.whileHeld(new MoveLift(40000));
-  button2.whileHeld(new MoveLift(0));
-  button3.whileHeld(new TestCommand(0));
-  /*
-  position1.whileHeld(command);
-  position2.whileHeld(command);
-  position3.whileHeld(command);
-  position4.whileHeld(command);
-  position5.whileHeld(command);
-  position6.whileHeld(command);
-  position7.whileHeld(command);
-  position8.whileHeld(command); */
-}
-  //// CREATING BUTTONS
-  // One type of button is a joystick button which is any button on a
-  //// joystick.
-  // You create one by telling it which joystick it's on and which button
-  // number it is.
-  // Joystick stick = new Joystick(port);
-  // Button button = new JoystickButton(stick, buttonNumber);
 
-  // There are a few additional built in buttons you can use. Additionally,
-  // by subclassing Button you can create custom triggers and bind those to
-  // commands the same as any other Button.
+  public OI(){
+    button1.whileHeld(new MoveLift(40000));
+    button2.whileHeld(new MoveLift(0));
+    button3.whileHeld(new TestCommand(0));
+    button4.whileHeld(new ManualLift());
 
-  //// TRIGGERING COMMANDS WITH BUTTONS
-  // Once you have a button, it's trivial to bind it to a button in one of
-  // three ways:
+    //Lift Positions
+    /*
+    position1.whileHeld(command);
+    position2.whileHeld(command);
+    position3.whileHeld(command);
+    position4.whileHeld(command);
+    position5.whileHeld(command);
+    position6.whileHeld(command);
+    position7.whileHeld(command);
+    position8.whileHeld(command); 
+    */
+  }
 
-  // Start the command when the button is pressed and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenPressed(new ExampleCommand());
+  public int getLiftDirection(){
+    int input = joystick.getPOV();
+    int output;
 
-  // Run the command while the button is being held down and interrupt it once
-  // the button is released.
-  // button.whileHeld(new ExampleCommand());
-
-  // Start the command when the button is released and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenReleased(new ExampleCommand());
+    if(input == -1){
+      output = 0; //Nothing/Middle
+    }else if (input == 0){
+      output = 1; //Up
+    }else if(input == 180){
+      output = -1; //Down
+    }else {
+      output = 0;
+    }
+    
+    return output;
+  }
 }
 
