@@ -9,14 +9,8 @@ package frc.robot;
 
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 import frc.robot.subsystems.*;
-import frc.robot.commands.*;
 
 public class Robot extends TimedRobot {
   //Subsystems
@@ -24,12 +18,6 @@ public class Robot extends TimedRobot {
   public static Lift m_lift;
   //OI
   public static OI m_oi;
-  //Commands
-  public static ArcadeDrive m_arcadeDrive;
-  public static TankDrive m_tankDrive;
-
-  Command m_autonomousCommand;
-  SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   //This function is run when the robot starts up
   @Override
@@ -37,13 +25,7 @@ public class Robot extends TimedRobot {
     m_drivetrain = new Drivetrain();
     m_lift = new Lift();
     m_oi = new OI();
-    m_arcadeDrive = new ArcadeDrive();
-    m_tankDrive = new TankDrive();
-    //m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
-    // chooser.addOption("My Auto", new MyAutoCommand());
-    //SmartDashboard.putData("Auto mode", m_chooser);
     CameraServer.getInstance().startAutomaticCapture();
-    
   }
 
   //This function is called every robot packet, no matter the mode
@@ -75,19 +57,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    //m_autonomousCommand = m_chooser.getSelected();
-
-    /*
-     * String autoSelected = SmartDashboard.getString("Auto Selector",
-     * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
-     * = new MyAutoCommand(); break; case "Default Auto": default:
-     * autonomousCommand = new ExampleCommand(); break; }
-     */
-
-    // schedule the autonomous command (example)
-    /*if (m_autonomousCommand != null) {
-      m_autonomousCommand.start();
-    } */
   }
 
   //This function is called periodically during autonomous.
@@ -98,14 +67,6 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
-    // This makes sure that the autonomous stops running when
-    // teleop starts running. If you want the autonomous to
-    // continue until interrupted by another command, remove
-    // this line or comment it out.
-    /*if (m_autonomousCommand != null) {
-      m_autonomousCommand.cancel();
-    } */
-    m_tankDrive.start();
   }
 
   //This function is called periodically during operator control.
