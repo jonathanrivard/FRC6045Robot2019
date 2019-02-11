@@ -21,16 +21,21 @@ public class Claw extends Subsystem {
   //-Motors
   TalonSRX clawMotor;
   TalonSRX tiltMotor;
+  TalonSRX ejectMotor;
   //GETTERS
   //-Motors
   public TalonSRX getClawMotor() { return clawMotor; }
   public TalonSRX getTiltMotor() { return tiltMotor; }
+  public TalonSRX getEjectMotor() { return ejectMotor; }
 
   //Constructor
   public Claw(){
     //Setup Claw Motor
     clawMotor = new TalonSRX(RobotMap.MOTOR_CLAW);
+    //Setup Tilt Motor
     tiltMotor = new TalonSRX(RobotMap.MOTOR_CLAW_TILT);
+    //Setup Eject Motor
+    ejectMotor = new TalonSRX(RobotMap.MOTOR_CLAW_EJECT);
   }
 
   public void setClawGrab(double per){
@@ -42,7 +47,7 @@ public class Claw extends Subsystem {
   }
 
   public void setClawEject(double per){
-    //No Eject Motor yet
+    ejectMotor.set(ControlMode.PercentOutput, per);
   }
 
   @Override
