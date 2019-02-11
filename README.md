@@ -1,14 +1,13 @@
-# FRC6045Robot
-Robot Code for 6045 First Robotics
+# Team 6045 - Sabre Robotics
+## FIRST Robotics Competition 2nd Year Team
+## Deep Space Robot
+## Name: Bagel
+## Motto: “Now we’re on a roll!”
 
-Link for WPILib documentation:
-https://wpilib.screenstepslive.com/s/currentCS/m/java
+Welcome to the Sabre Robotics FIRST Team for the 2018-2019 year. This year our robot’s name is the Bagel, continuing on the bread themed naming process from last year. We are choosing to put our robot’s code on github in order to make inhouse programming sharing easier and make it a potential resource for the community. 
 
-Link for FRC Java documentation:
-http://first.wpi.edu/FRC/roborio/release/docs/java/
+Feel free to browse our code if you are curious to see how we designed it, or if you are looking for a example for a specific system. All we ask is that you don’t directly copy and paste and that you give credit were credit is due. At the end of the Read Me you will find links to form posts and documentation that helped us create the code for the Bagel. 
 
-Tutorial bot link:
-https://github.com/FRCTeam3255/FRC-Java-Tutorial/
-
-Programming Done Right:
-https://media.readthedocs.org/pdf/frc-pdr/latest/frc-pdr.pdf
+## Social Media
+#### Twitter
+[Click Here](https://twitter.com/frc6045)
