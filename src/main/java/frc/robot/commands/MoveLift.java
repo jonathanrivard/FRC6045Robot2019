@@ -59,8 +59,8 @@ public class MoveLift extends Command { //Moves the lift to the desired position
   @Override
   protected void execute() {
     int threshold = 1000;
-    int liftSpeed = 0.1;
-    long current = Robot.m_lift.getEncoderMotor().getSelectedSensorPosition(); //Get current position
+    double liftSpeed = 0.1;
+    long current = Robot.m_lift.getLiftMotor().getSelectedSensorPosition(); //Get current position
     long error = ticks - current; //Find the error of the current position and our desired position
 
     //Debugging Print Statement

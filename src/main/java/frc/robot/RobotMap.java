@@ -13,7 +13,6 @@ public class RobotMap {
     public static int CONTROL_POS_SIX = 12; 
     public static int CONTROL_POS_SEVEN = 4; 
     public static int CONTROL_POS_EIGHT = 3; 
-    
     //LEFT JOYSTICK
     public static int LEFT_JOYSTICK = 1;
     public static int LEFT_JOYSTICK_TRIGGER = 0;
@@ -27,6 +26,7 @@ public class RobotMap {
     public static int MOTOR_RIGHT_FRONT = 1;
     public static int MOTOR_RIGHT_BACK = 0;
     //-Lift
+    public static int MOTOR_LIFT = 0;
     //-Claw
     public static int MOTOR_CLAW = 0;
     public static int MOTOR_CLAW_TILT = 0;
