@@ -12,6 +12,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 import frc.robot.commands.ManualLift;
 
 public class Lift extends Subsystem { //Subsystem for elevator lift
@@ -19,14 +20,12 @@ public class Lift extends Subsystem { //Subsystem for elevator lift
   //INSTANCE VARIABLES
   //-Motors
   TalonSRX liftMotor;
-  TalonSRX encoderMotor;
   //-Limit Switches
   DigitalInput topLimit;
   DigitalInput bottomLimit;
   //GETTERS
   //-Motors
   public TalonSRX getLiftMotor() { return liftMotor; }
-  public TalonSRX getEncoderMotor() { return encoderMotor; }
   //-Limit Switches
   public boolean getTopLimit() { return topLimit.get(); }
   public boolean getBottomLimit() { return bottomLimit.get(); }
@@ -34,11 +33,10 @@ public class Lift extends Subsystem { //Subsystem for elevator lift
   //Constuctor
   public Lift(){
     //Setup Motor
-    encoderMotor = new TalonSRX(0);
-    liftMotor = new TalonSRX(1);
+    liftMotor = new TalonSRX(RobotMap.MOTOR_LIFT);
     liftMotor.setInverted(false);
-    encoderMotor.configPeakCurrentDuration(0, 30);
-    encoderMotor.setSelectedSensorPosition(0);
+    liftMotor.configPeakCurrentDuration(0, 30);
+    liftMotor.setSelectedSensorPosition(0);
   }
 
   @Override
