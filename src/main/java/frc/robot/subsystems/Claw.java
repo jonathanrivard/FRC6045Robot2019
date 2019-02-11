@@ -32,10 +32,16 @@ public class Claw extends Subsystem {
   public Claw(){
     //Setup Claw Motor
     clawMotor = new TalonSRX(RobotMap.MOTOR_CLAW);
+    clawMotor.setInverted(false);
+    clawMotor.configPeakCurrentDuration(0, 30);
+    clawMotor.setSelectedSensorPosition(0);
     //Setup Tilt Motor
     tiltMotor = new TalonSRX(RobotMap.MOTOR_CLAW_TILT);
     //Setup Eject Motor
     ejectMotor = new TalonSRX(RobotMap.MOTOR_CLAW_EJECT);
+    ejectMotor.setInverted(false);
+    ejectMotor.configPeakCurrentDuration(0, 30);
+    ejectMotor.setSelectedSensorPosition(0);
   }
 
   public void setClawGrab(double per){
