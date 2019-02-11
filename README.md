@@ -11,3 +11,15 @@ Feel free to browse our code if you are curious to see how we designed it, or if
 ## Social Media
 #### Twitter
 [Click Here](https://twitter.com/frc6045)
+#### Facebook
+[Click Here](https://p.facebook.com/SabreRobotics/)
+
+## Links to Documentation and Forum Posts that Helped Us
+#### Java Page from FIRST
+[Click Here](https://wpilib.screenstepslive.com/s/currentCS/m/java)
+#### WPILib Documentation
+[Click Here](http://first.wpi.edu/FRC/roborio/release/docs/java/)
+#### Tutorial Bot from Team 3255
+[Click Here](https://github.com/FRCTeam3255/FRC-Java-Tutorial/)
+#### FRC Programming Done Right - Documentation 
+[Click Here](https://media.readthedocs.org/pdf/frc-pdr/latest/frc-pdr.pdf) 
