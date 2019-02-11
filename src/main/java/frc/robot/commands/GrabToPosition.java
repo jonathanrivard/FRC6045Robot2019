@@ -14,9 +14,9 @@ import frc.robot.RobotMap;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 
-public class Grab extends Command {
+public class GrabToPosition extends Command {
    
-  public Grab() {
+  public GrabToPosition() {
     
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
