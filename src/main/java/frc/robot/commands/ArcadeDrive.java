@@ -7,18 +7,14 @@
 
 package frc.robot.commands;
 
-import frc.robot.OI;
 import frc.robot.Robot;
-import frc.robot.subsystems.Drivetrain;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 public class ArcadeDrive extends Command {
 
   public ArcadeDrive() {
-    requires(Robot.m_drivetrain);
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.m_drivetrain); //Require the drivetrain
   }
 
   // Called just before this Command runs the first time
@@ -29,11 +25,13 @@ public class ArcadeDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double xSpeed = Robot.m_oi.controlJoystick.getY();
-    double zRotate = Robot.m_oi.controlJoystick.getX();
+    //Get each axis
+    double xSpeed = Robot.m_oi.controlJoystick.getY(); //Forward axis
+    double zRotate = Robot.m_oi.controlJoystick.getX(); //Side to side for rotation axis
+    //Get the throttle value
     double scaler = Robot.m_oi.controlJoystick.getThrottle();
-    scaler = (scaler * -1 + 1) / 2;
-    Robot.m_drivetrain.arcadeDrive(xSpeed * -1 * scaler, zRotate * scaler);
+    scaler = (scaler * -1 + 1) / 2; //Change the scaler to a usable value
+    Robot.m_drivetrain.arcadeDrive(xSpeed * -1 * scaler, zRotate * scaler); //Use arcade drive
    
   }
 
