@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
@@ -22,11 +23,17 @@ public class Claw extends Subsystem {
   TalonSRX clawMotor;
   TalonSRX tiltMotor;
   TalonSRX ejectMotor;
+  //-Limit Switches
+  DigitalInput openLimit;
+  DigitalInput closedLimit;
   //GETTERS
   //-Motors
   public TalonSRX getClawMotor() { return clawMotor; }
   public TalonSRX getTiltMotor() { return tiltMotor; }
   public TalonSRX getEjectMotor() { return ejectMotor; }
+  //-Limit Switches
+  public boolean getOpenLimit() { return openLimit.get(); }
+  public boolean getClosedLimit() { return closedLimit.get(); }
 
   //Constructor
   public Claw(){
