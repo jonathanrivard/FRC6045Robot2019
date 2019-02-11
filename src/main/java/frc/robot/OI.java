@@ -36,6 +36,7 @@ public class OI {
   Button buttonPositionEight = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_EIGHT);
   
   public OI(){
+    //Create the position buttons
     buttonPositionOne.whileHeld(new MoveLift(1));
     buttonPositionTwo.whileHeld(new MoveLift(2));
     buttonPositionThree.whileHeld(new MoveLift(3));
