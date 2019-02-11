@@ -31,6 +31,11 @@ public class RobotMap {
     public static int MOTOR_CLAW = 0;
     public static int MOTOR_CLAW_TILT = 0;
     public static int MOTOR_CLAW_EJECT = 0;
+    public static int GRAB_HATCH_PODS = 5;
+    public static int CLAW_CLOSED_POSITION = 0;
+    public static int CLAW_OPEN_POSITION = 0;
+    // Manual grab is z axis
+    // Manual tilt is y axis
     //SCALER
     public static float SCALER_DRIVE = 0.7f;
     public static float SCALER_LIFT = 0.3f;
