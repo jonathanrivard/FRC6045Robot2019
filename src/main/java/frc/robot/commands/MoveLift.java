@@ -58,16 +58,19 @@ public class MoveLift extends Command { //Moves the lift to the desired position
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    long current = Robot.m_lift.getEncoderMotor().getSelectedSensorPosition();
-    long error = ticks - current;
+    int threshold = 1000;
+    int liftSpeed = 0.1;
+    long current = Robot.m_lift.getEncoderMotor().getSelectedSensorPosition(); //Get current position
+    long error = ticks - current; //Find the error of the current position and our desired position
 
     //Debugging Print Statement
     //System.out.println(error + " ; " + current);
 
-    if(error > 1000){
-      Robot.m_lift.setPercentage(0.1);
-    }else if (error < -1000){
-      Robot.m_lift.setPercentage(-0.1);
+    //Go to the desired position, within the threshold to prevent osolation 
+    if(error > threshold){
+      Robot.m_lift.setPercentage(liftSpeed);
+    }else if (error < -1 * threshold){
+      Robot.m_lift.setPercentage(liftSpeed);
     }else {
       Robot.m_lift.setPercentage(0);
     }
@@ -82,7 +85,7 @@ public class MoveLift extends Command { //Moves the lift to the desired position
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_lift.setPercentage(0);
+    Robot.m_lift.setPercentage(0); //Set lift power to 0
   }
 
   // Called when another command which requires one or more of the same
