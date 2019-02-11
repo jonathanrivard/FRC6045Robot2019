@@ -20,12 +20,17 @@ public class RobotMap {
     public static int RIGHT_JOYSTICK = 2;
     public static int RIGHT_JOYSTICK_TRIGGER = 0;
     //MOTORS
+    //-Drivetrain
     public static int MOTOR_LEFT_FRONT = 14;
     public static int MOTOR_LEFT_BACK = 15;
     public static int MOTOR_RIGHT_FRONT = 1;
     public static int MOTOR_RIGHT_BACK = 0;
+    //-Lift
     public static int MOTOR_LIFT = 0;
-    public static int MOTOR_CLAW_GRAB = 0;
+    //-Claw
+    public static int MOTOR_CLAW = 0;
+    public static int MOTOR_CLAW_TILT = 0;
+    public static int MOTOR_CLAW_EJECT = 0;
     //SCALER
     public static float SCALER_DRIVE = 0.7f;
     public static float SCALER_LIFT = 0.3f;
