@@ -15,9 +15,9 @@ import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 
 public class Grab extends Command {
-  TalonSRX grabMotor; 
+   
   public Grab() {
-    grabMotor = new TalonSRX(RobotMap.MOTOR_CLAW_GRAB);
+    
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
