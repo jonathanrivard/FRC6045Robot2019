@@ -25,6 +25,7 @@ public class RobotMap {
     public static int MOTOR_RIGHT_FRONT = 1;
     public static int MOTOR_RIGHT_BACK = 0;
     public static int MOTOR_LIFT = 0;
+    public static int MOTOR_CLAW_GRAB = 0;
     //SCALER
     public static float SCALER_DRIVE = 0.7f;
     public static float SCALER_LIFT = 0.3f;
