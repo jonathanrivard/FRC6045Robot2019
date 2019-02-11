@@ -10,6 +10,7 @@ package frc.robot.commands;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
@@ -17,7 +18,7 @@ import frc.robot.subsystems.*;
 public class GrabToPosition extends Command {
    
   public GrabToPosition() {
-    
+    requires(Robot.m_claw);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
