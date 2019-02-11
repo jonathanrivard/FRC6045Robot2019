@@ -13,9 +13,7 @@ import frc.robot.RobotMap;
 
 public class TankDrive extends Command {
   public TankDrive() {
-    requires(Robot.m_drivetrain);
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.m_drivetrain); //Require the drivestrain system
   }
 
   // Called just before this Command runs the first time
@@ -26,10 +24,14 @@ public class TankDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    //Get the two joystick axis
     double leftSpeed = Robot.m_oi.leftJoystick.getY();
     double rightSpeed = Robot.m_oi.rightJoystick.getY();
+    //Get the throttle from the left joystick
     double scaler = Robot.m_oi.leftJoystick.getThrottle();
-    scaler = ((scaler * -1 + 1) / 2) * RobotMap.SCALER_DRIVE;
+    //Trun the scaler into something we can use
+    scaler = ((scaler * -1 + 1) / 2) * RobotMap.SCALER_DRIVE; 
+    //Send values to drivetrain for tankdrive
     Robot.m_drivetrain.tankDrive(leftSpeed * scaler * -1, rightSpeed * scaler * -1);
   }
 
