@@ -14,21 +14,26 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.commands.ManualLift;
 
-public class Lift extends Subsystem {
+public class Lift extends Subsystem { //Subsystem for elevator lift
 
-  //Instance Varibles
+  //INSTANCE VARIABLES
+  //-Motors
   TalonSRX liftMotor;
   TalonSRX encoderMotor;
+  //-Limit Switches
   DigitalInput topLimit;
   DigitalInput bottomLimit;
-  //Getters
+  //GETTERS
+  //-Motors
   public TalonSRX getLiftMotor() { return liftMotor; }
   public TalonSRX getEncoderMotor() { return encoderMotor; }
+  //-Limit Switches
   public boolean getTopLimit() { return topLimit.get(); }
   public boolean getBottomLimit() { return bottomLimit.get(); }
 
   //Constuctor
   public Lift(){
+    //Setup Motor
     encoderMotor = new TalonSRX(0);
     liftMotor = new TalonSRX(1);
     liftMotor.setInverted(false);
@@ -38,33 +43,21 @@ public class Lift extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(new ManualLift());
+    setDefaultCommand(new ManualLift()); //Manual Lift Control by default
   }
 
-  //Methods
+  //Set the position of the motor
+  //Currently Unused
   public void setPosition(int pos){
     liftMotor.set(ControlMode.Position, pos);
   }
 
+  //Set the motor using percentage output
   public void setPercentage(double per){
     liftMotor.set(ControlMode.PercentOutput, per);
-    /*
-    if(per > 0){
-      //liftMotor.setInverted(false);
-      //liftMotor.setSensorPhase(false);
-      liftMotor.set(ControlMode.PercentOutput, per);
-    }else if(per < 0){
-      //liftMotor.setInverted(true);
-      //liftMotor.setSensorPhase(true);
-      liftMotor.set(ControlMode.PercentOutput, per);
-    }else {
-      //liftMotor.setInverted(false);
-      //liftMotor.setSensorPhase(false);
-      liftMotor.set(ControlMode.PercentOutput, 0);
-    }
-    */
   }
 
+  //Set the encoders current position
   public void setCurrentPosition(int pos){
     liftMotor.setSelectedSensorPosition(pos);
   }
