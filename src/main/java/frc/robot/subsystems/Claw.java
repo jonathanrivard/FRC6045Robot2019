@@ -51,15 +51,15 @@ public class Claw extends Subsystem {
     ejectMotor.setSelectedSensorPosition(0);
   }
 
-  public void setClawGrab(double per){
+  public void setClawGrab(double per){ //Set the grab motion of the claw
     clawMotor.set(ControlMode.PercentOutput, per);
   }
 
-  public void setClawTilt(double per){
+  public void setClawTilt(double per){ //Set the tilt motion of the claw
     tiltMotor.set(ControlMode.PercentOutput, per);
   }
 
-  public void setClawEject(double per){
+  public void setClawEject(double per){ //Set the belt speed on the claw
     ejectMotor.set(ControlMode.PercentOutput, per);
   }
 
