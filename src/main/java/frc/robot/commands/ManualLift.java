@@ -11,9 +11,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 
-public class ManualLift extends Command {
+public class ManualLift extends Command { //Command to manually control the lift using the POV on the control stick
   public ManualLift() {
-    requires(Robot.m_lift);
+    requires(Robot.m_lift); //Require the lift system
   }
 
   // Called just before this Command runs the first time
@@ -45,7 +45,7 @@ public class ManualLift extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_lift.setPercentage(0);
+    Robot.m_lift.setPercentage(0); //Set lift to 0
   }
 
   // Called when another command which requires one or more of the same
