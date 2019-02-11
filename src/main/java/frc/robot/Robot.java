@@ -16,6 +16,7 @@ public class Robot extends TimedRobot {
   //Subsystems
   public static Drivetrain m_drivetrain = new Drivetrain();
   public static Lift m_lift;
+  public static Claw m_claw;
   //OI
   public static OI m_oi;
 
@@ -24,6 +25,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_drivetrain = new Drivetrain();
     m_lift = new Lift();
+    m_claw = new Claw();
     m_oi = new OI();
     CameraServer.getInstance().startAutomaticCapture();
   }
