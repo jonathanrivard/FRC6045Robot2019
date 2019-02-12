@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import frc.robot.commands.TestCommand;
 import frc.robot.subsystems.*;
 
 public class Robot extends TimedRobot {
@@ -21,6 +22,8 @@ public class Robot extends TimedRobot {
   public static ClawTilter m_clawTilter;
   //OI
   public static OI m_oi;
+  //Command
+  TestCommand testCommand;
 
   //This function is run when the robot starts up
   @Override
@@ -31,6 +34,7 @@ public class Robot extends TimedRobot {
     m_clawBelt = new ClawBelt();
     m_clawTilter = new ClawTilter();
     m_oi = new OI();
+    testCommand = new TestCommand();
     CameraServer.getInstance().startAutomaticCapture();
   }
 
@@ -73,6 +77,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
+    testCommand.start();
   }
 
   //This function is called periodically during operator control.

@@ -23,10 +23,10 @@ public class RobotMap {
     //-Claw
     //--Grabber
     public static int DIGITAL_CLAW_GRABBER_OPEN = 0;
-    public static int DIGITAL_CLAW_GRABBER_CLOSED = 0;
+    public static int DIGITAL_CLAW_GRABBER_CLOSED = 1;
     //--Tilter
-    public static int DIGITAL_CLAW_TILTER_TOP = 0;
-    public static int DIGITAL_CLAW_TILTER_BOTTOM = 0;
+    public static int DIGITAL_CLAW_TILTER_TOP = 2;
+    public static int DIGITAL_CLAW_TILTER_BOTTOM = 3;
     //MOTORS
     //-Drivetrain
     public static int MOTOR_LEFT_FRONT = 14;
