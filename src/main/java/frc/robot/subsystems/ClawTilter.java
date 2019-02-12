@@ -7,14 +7,39 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
-/**
- * Add your docs here.
- */
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
+
 public class ClawTilter extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+  //INTANCE VARIABLES 
+  //-Motors
+  TalonSRX tiltMotor;
+  //-Limit Switches
+  DigitalInput topLimit;
+  DigitalInput bottomLimit;
+  //GETTERS
+  //-Motors
+  public TalonSRX getTiltMotor() { return tiltMotor; }
+  //-Limit Switches
+  public boolean getTopLimit() { return topLimit.get(); }
+  public boolean getBottomLimit() { return bottomLimit.get(); }
+
+  public ClawTilter(){
+    //Setup tiler claw
+    tiltMotor = new TalonSRX(RobotMap.MOTOR_CLAW_TILT);
+    tiltMotor.setInverted(false);
+    tiltMotor.configPeakCurrentDuration(0, 30);
+    tiltMotor.setSelectedSensorPosition(0);
+  }
+
+  //Set speed of tilt motor
+  public void setPercentage(double per){
+    tiltMotor.set(ControlMode.PercentOutput, per);
+  }
 
   @Override
   public void initDefaultCommand() {
