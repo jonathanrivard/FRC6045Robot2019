@@ -25,8 +25,8 @@ public class ClawTilter extends Subsystem {
   //-Motors
   public TalonSRX getTiltMotor() { return tiltMotor; }
   //-Limit Switches
-  public boolean getTopLimit() { return topLimit.get(); }
-  public boolean getBottomLimit() { return bottomLimit.get(); }
+  //public boolean getTopLimit() { return topLimit.get(); }
+  //public boolean getBottomLimit() { return bottomLimit.get(); }
 
   public ClawTilter(){
     //Setup tiler claw
