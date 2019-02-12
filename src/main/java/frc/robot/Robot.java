@@ -26,7 +26,8 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_drivetrain = new Drivetrain();
     m_lift = new Lift();
-    m_claw = new Claw();
+    m_clawGrabber = new ClawGrabber();
+    
     m_oi = new OI();
     CameraServer.getInstance().startAutomaticCapture();
   }

@@ -24,9 +24,9 @@ public class RobotMap {
     public static int MOTOR_LEFT_FRONT = 14;
     public static int MOTOR_LEFT_BACK = 15;
     public static int MOTOR_RIGHT_FRONT = 1;
-    public static int MOTOR_RIGHT_BACK = 0;
+    public static int MOTOR_RIGHT_BACK = 10;
     //-Lift
-    public static int MOTOR_LIFT = 0;
+    public static int MOTOR_LIFT = 13;
     //-Claw
     public static int MOTOR_CLAW = 0;
     public static int MOTOR_CLAW_TILT = 0;

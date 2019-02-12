@@ -19,7 +19,7 @@ import frc.robot.subsystems.*;
 public class GrabToPosition extends Command {
    long ticks;
   public GrabToPosition(int position) {
-    requires(Robot.m_claw);
+    requires(Robot.m_clawGrabber);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     switch(position){
