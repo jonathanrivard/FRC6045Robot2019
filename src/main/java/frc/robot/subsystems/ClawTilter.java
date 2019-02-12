@@ -34,6 +34,9 @@ public class ClawTilter extends Subsystem {
     tiltMotor.setInverted(false);
     tiltMotor.configPeakCurrentDuration(0, 30);
     tiltMotor.setSelectedSensorPosition(0);
+    //Limit Switches
+    //topLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_TILTER_TOP);
+    //bottomLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_TILTER_BOTTOM);
   }
 
   //Set speed of tilt motor
