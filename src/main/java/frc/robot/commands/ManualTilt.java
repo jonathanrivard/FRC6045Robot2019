@@ -10,7 +10,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ManualTilt extends Command {
+public class ManualTilt extends Command { //Manual Tilt Command using control joysick for claw
   public ManualTilt() {
     requires(Robot.m_clawTilter);
   }
@@ -23,6 +23,8 @@ public class ManualTilt extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double input = Robot.m_oi.controlJoystick.getZ(); //Get z axis
+    Robot.m_clawTilter.setPercentage(input); //Set tilt motor to z axis
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -40,5 +42,6 @@ public class ManualTilt extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }
