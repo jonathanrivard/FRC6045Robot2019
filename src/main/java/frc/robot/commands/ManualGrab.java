@@ -13,7 +13,7 @@ import frc.robot.RobotMap;
 
 public class ManualGrab extends Command {
   public ManualGrab() {
-    requires(Robot.m_claw);
+    requires(Robot.m_clawGrabber);
   }
 
   // Called just before this Command runs the first time

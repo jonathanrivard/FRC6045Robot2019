@@ -12,7 +12,7 @@ import frc.robot.Robot;
 
 public class ManualTilt extends Command {
   public ManualTilt() {
-    requires(Robot.m_claw);
+    requires(Robot.m_clawTilter);
   }
 
   // Called just before this Command runs the first time
