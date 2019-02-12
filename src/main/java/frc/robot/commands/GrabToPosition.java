@@ -43,7 +43,7 @@ public class GrabToPosition extends Command {
   protected void execute() {
     int threshold = 1000;
     double clawSpeed = 0.1;
-    long current = Robot.m_claw.getClawMotor().getSelectedSensorPosition();
+    long current = Robot.m_clawGrabber.getClawMotor().getSelectedSensorPosition();
     long error = ticks - current;
 
     if(error > threshold){
