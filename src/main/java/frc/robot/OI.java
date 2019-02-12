@@ -65,4 +65,11 @@ public class OI {
     
     return output; //Return direction
   }
+
+  public double getControlThrottleScaler(){
+    double scaler = controlJoystick.getThrottle();
+    scaler = (scaler * -1 + 1) / 2; //Change the scaler to a usable value
+
+    return scaler;
+  }
 }
