@@ -25,8 +25,8 @@ public class ClawTilter extends Subsystem {
   //-Motors
   public TalonSRX getTiltMotor() { return tiltMotor; }
   //-Limit Switches
-  //public boolean getTopLimit() { return topLimit.get(); }
-  //public boolean getBottomLimit() { return bottomLimit.get(); }
+  public boolean getTopLimit() { return topLimit.get(); }
+  public boolean getBottomLimit() { return bottomLimit.get(); }
 
   public ClawTilter(){
     //Setup tiler claw
@@ -35,8 +35,8 @@ public class ClawTilter extends Subsystem {
     tiltMotor.configPeakCurrentDuration(0, 30);
     tiltMotor.setSelectedSensorPosition(0);
     //Limit Switches
-    //topLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_TILTER_TOP);
-    //bottomLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_TILTER_BOTTOM);
+    topLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_TILTER_TOP);
+    bottomLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_TILTER_BOTTOM);
   }
 
   //Set speed of tilt motor
