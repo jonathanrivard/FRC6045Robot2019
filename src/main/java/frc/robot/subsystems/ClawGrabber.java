@@ -25,8 +25,8 @@ public class ClawGrabber extends Subsystem {
   //-Motors
   public TalonSRX getGrabMotor() { return grabMotor; }
   //-Limit Switches
-  //public boolean getOpenLimit() { return openLimit.get(); }
-  //public boolean getClosedLimit() { return closedLimit.get(); }
+  public boolean getOpenLimit() { return openLimit.get(); }
+  public boolean getClosedLimit() { return closedLimit.get(); }
 
   //Constructor
   public ClawGrabber(){
