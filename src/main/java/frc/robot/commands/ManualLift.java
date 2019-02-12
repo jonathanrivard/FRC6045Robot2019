@@ -31,7 +31,7 @@ public class ManualLift extends Command { //Command to manually control the lift
     }else if(Robot.m_lift.getBottomLimit() && direction < 0){//If the bottom limit is pressed and we are tring to go down
       Robot.m_lift.setPercentage(0); //Then don't
     }else { //If neither of those
-      Robot.m_lift.setPercentage(direction * RobotMap.SCALER_LIFT * Robot.m_oi.getControlThrottleScaler()); //Set the lift speed
+      Robot.m_lift.setPercentage(direction * RobotMap.SCALER_LIFT_MANUAL * Robot.m_oi.getControlThrottleScaler()); //Set the lift speed
     }
     
   }

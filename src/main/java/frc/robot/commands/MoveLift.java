@@ -59,7 +59,6 @@ public class MoveLift extends Command { //Moves the lift to the desired position
   @Override
   protected void execute() {
     int threshold = 1000;
-    double liftSpeed = 0.1;
     long current = Robot.m_lift.getLiftMotor().getSelectedSensorPosition(); //Get current position
     long error = ticks - current; //Find the error of the current position and our desired position
 
@@ -75,9 +74,9 @@ public class MoveLift extends Command { //Moves the lift to the desired position
 
     //Go to the desired position, within the threshold to prevent osolation 
     if(error > threshold){
-      Robot.m_lift.setPercentage(liftSpeed);
+      Robot.m_lift.setPercentage(RobotMap.SCALER_LIFT_AUTO * Robot.m_oi.getControlThrottleScaler());
     }else if (error < -1 * threshold){
-      Robot.m_lift.setPercentage(liftSpeed);
+      Robot.m_lift.setPercentage(-1 * (RobotMap.SCALER_LIFT_AUTO * Robot.m_oi.getControlThrottleScaler());
     }else {
       Robot.m_lift.setPercentage(0);
     }
