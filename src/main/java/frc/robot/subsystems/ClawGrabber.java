@@ -14,53 +14,32 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
-/**
- * Add your docs here.
- */
-public class Claw extends Subsystem {
+public class ClawGrabber extends Subsystem {
   //INSTANCE VARIABLES
   //-Motors
-  TalonSRX clawMotor;
-  TalonSRX tiltMotor;
-  TalonSRX ejectMotor;
+  TalonSRX grabMotor;
   //-Limit Switches
   DigitalInput openLimit;
   DigitalInput closedLimit;
   //GETTERS
   //-Motors
-  public TalonSRX getClawMotor() { return clawMotor; }
-  public TalonSRX getTiltMotor() { return tiltMotor; }
-  public TalonSRX getEjectMotor() { return ejectMotor; }
+  public TalonSRX getGrabMotor() { return grabMotor; }
   //-Limit Switches
   public boolean getOpenLimit() { return openLimit.get(); }
   public boolean getClosedLimit() { return closedLimit.get(); }
 
   //Constructor
-  public Claw(){
+  public ClawGrabber(){
     //Setup Claw Motor
-    clawMotor = new TalonSRX(RobotMap.MOTOR_CLAW);
-    clawMotor.setInverted(false);
-    clawMotor.configPeakCurrentDuration(0, 30);
-    clawMotor.setSelectedSensorPosition(0);
-    //Setup Tilt Motor
-    tiltMotor = new TalonSRX(RobotMap.MOTOR_CLAW_TILT);
-    //Setup Eject Motor
-    ejectMotor = new TalonSRX(RobotMap.MOTOR_CLAW_EJECT);
-    ejectMotor.setInverted(false);
-    ejectMotor.configPeakCurrentDuration(0, 30);
-    ejectMotor.setSelectedSensorPosition(0);
+    grabMotor = new TalonSRX(RobotMap.MOTOR_CLAW);
+    grabMotor.setInverted(false);
+    grabMotor.configPeakCurrentDuration(0, 30);
+    grabMotor.setSelectedSensorPosition(0);
   }
 
-  public void setClawGrab(double per){ //Set the grab motion of the claw
-    clawMotor.set(ControlMode.PercentOutput, per);
-  }
-
-  public void setClawTilt(double per){ //Set the tilt motion of the claw
-    tiltMotor.set(ControlMode.PercentOutput, per);
-  }
-
-  public void setClawEject(double per){ //Set the belt speed on the claw
-    ejectMotor.set(ControlMode.PercentOutput, per);
+  //Set speed of grab motor
+  public void setPercentage(double per){
+    grabMotor.set(ControlMode.PercentOutput, per);
   }
 
   @Override
