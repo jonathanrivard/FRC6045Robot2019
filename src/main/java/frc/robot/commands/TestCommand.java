@@ -25,7 +25,7 @@ public class TestCommand extends Command {
   TalonSRX motor;
   double speed;
 
-  public TestCommand(double speed){
+  public TestCommand(){
     requires(Robot.m_Lift);
     System.out.println("TestCommand Made");
     
@@ -67,7 +67,7 @@ public class TestCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    motor.set(ControlMode.PercentOutput, -1);
+    motor.set(ControlMode.PercentOutput, 0.4);
     System.out.println("EXAMACUTING");
   }
 

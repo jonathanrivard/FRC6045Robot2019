@@ -23,6 +23,7 @@ import frc.robot.commands.Grab;
 import frc.robot.commands.Intake;
 import frc.robot.commands.ManualLift;
 import frc.robot.commands.MoveLift;
+import frc.robot.commands.TestCommand;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -41,6 +42,7 @@ public class Robot extends TimedRobot {
   //OI
   public static OI m_oi = new OI();
   //Commands
+  TestCommand c;
   //None currently needed
 
 
@@ -53,6 +55,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    c = new TestCommand();
     
    // m_chooser.setDefaultOption("Default Auto", new DriveArcade());
     // chooser.addOption("My Auto", new MyAutoCommand());
@@ -129,6 +132,7 @@ public class Robot extends TimedRobot {
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
+
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
