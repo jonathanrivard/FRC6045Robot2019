@@ -19,6 +19,14 @@ public class RobotMap {
     //RIGHT JOYSTICK
     public static int RIGHT_JOYSTICK = 2;
     public static int RIGHT_JOYSTICK_TRIGGER = 0;
+    //DIGITAL INPUTS
+    //-Claw
+    //--Grabber
+    public static int DIGITAL_CLAW_GRABBER_OPEN = 0;
+    public static int DIGITAL_CLAW_GRABBER_CLOSED = 0;
+    //--Tilter
+    public static int DIGITAL_CLAW_TILTER_TOP = 0;
+    public static int DIGITAL_CLAW_TILTER_BOTTOM = 0;
     //MOTORS
     //-Drivetrain
     public static int MOTOR_LEFT_FRONT = 14;

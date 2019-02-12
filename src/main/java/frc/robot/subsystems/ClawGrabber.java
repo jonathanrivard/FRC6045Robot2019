@@ -25,8 +25,8 @@ public class ClawGrabber extends Subsystem {
   //-Motors
   public TalonSRX getGrabMotor() { return grabMotor; }
   //-Limit Switches
-  public boolean getOpenLimit() { return openLimit.get(); }
-  public boolean getClosedLimit() { return closedLimit.get(); }
+  //public boolean getOpenLimit() { return openLimit.get(); }
+  //public boolean getClosedLimit() { return closedLimit.get(); }
 
   //Constructor
   public ClawGrabber(){
@@ -35,6 +35,9 @@ public class ClawGrabber extends Subsystem {
     grabMotor.setInverted(false);
     grabMotor.configPeakCurrentDuration(0, 30);
     grabMotor.setSelectedSensorPosition(0);
+    //Limit switch
+    //openLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_GRABBER_OPEN);
+    //closedLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_GRABBER_CLOSED);
   }
 
   //Set speed of grab motor
