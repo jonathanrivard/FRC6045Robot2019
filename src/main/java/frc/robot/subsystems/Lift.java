@@ -34,7 +34,7 @@ public class Lift extends Subsystem { //Subsystem for elevator lift
   public Lift(){
     //Setup Motor
     liftMotor = new TalonSRX(RobotMap.MOTOR_LIFT);
-    liftMotor.setInverted(false);
+    liftMotor.setInverted(true); //Positive value lifts up, needed invert to do that
     liftMotor.configPeakCurrentDuration(0, 30);
     liftMotor.setSelectedSensorPosition(0);
   }
