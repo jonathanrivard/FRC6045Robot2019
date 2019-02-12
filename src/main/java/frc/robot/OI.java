@@ -36,7 +36,6 @@ public class OI {
   Button buttonPositionSeven = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_SEVEN);
   Button buttonPositionEight = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_EIGHT);
   //-Claw Button
-  Button buttonClawPositionHatchPods = new JoystickButton(controlJoystick, RobotMap.GRAB_HATCH_PODS);
   Button buttonClawPositionHatchPos = new JoystickButton(controlJoystick, RobotMap.GRAB_HATCH_POS);
   public OI(){
     //Create the position buttons
