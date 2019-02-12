@@ -7,55 +7,33 @@
 
 package frc.robot.commands;
 
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-
-
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
-import frc.robot.commands.*;
-import frc.robot.subsystems.*;
 
-public class GrabToPosition extends Command {
-   long ticks;
-  public GrabToPosition(int position) {
-    requires(Robot.m_clawGrabber);
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
-    switch(position){
-      case 1: ticks = RobotMap.CLAW_OPEN_POSITION;
-      break;
-      case 2: ticks = RobotMap.CLAW_CLOSED_POSITION;
-      break;
-    }
-   
-}
+public class ManualGrab extends Command {
+  public ManualGrab() {
+    requires(Robot.m_claw);
+  }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-
-
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    int threshold = 1000;
-    double clawSpeed = 0.1;
-    long current = Robot.m_claw.getClawMotor().getSelectedSensorPosition();
-    long error = ticks - current;
+    double input = Robot.m_oi.controlJoystick.getZ();
 
-    if(error > threshold){
-      Robot.m_lift.setPercentage(clawSpeed);
-    }else if (error < -1 * threshold){
-      Robot.m_lift.setPercentage(clawSpeed);
-    }else {
-      Robot.m_lift.setPercentage(0);
+    if(Robot.m_claw.getOpenLimit() && input > 0){ //If the open limit is pressed and we are tring to go up
+      Robot.m_claw.setClawGrab(0); //Then don't
+    }else if(Robot.m_claw.getClosedLimit() && input < 0){//If the closed limit is pressed and we are tring to go down
+      Robot.m_claw.setClawGrab(0); //Then don't
+    }else { //If neither of those
+      Robot.m_claw.setClawGrab(input * RobotMap.SCALER_CLAW_GRAB); //Set the lift speed
     }
   }
-
-  
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
@@ -66,6 +44,7 @@ public class GrabToPosition extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.m_claw.setClawGrab(0); //At the end, set the claw speed to zero
   }
 
   // Called when another command which requires one or more of the same

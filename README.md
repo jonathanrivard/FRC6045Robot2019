@@ -23,3 +23,5 @@ Feel free to browse our code if you are curious to see how we designed it, or if
 [Click Here](https://github.com/FRCTeam3255/FRC-Java-Tutorial/)
 #### FRC Programming Done Right - Documentation 
 [Click Here](https://media.readthedocs.org/pdf/frc-pdr/latest/frc-pdr.pdf) 
+#### Deep Space Game Details
+[Click Here](https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system)
