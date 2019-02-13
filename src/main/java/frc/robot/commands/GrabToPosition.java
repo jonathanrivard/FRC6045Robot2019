@@ -17,8 +17,7 @@ public class GrabToPosition extends Command {
    
   public GrabToPosition(int position) {
     requires(Robot.m_clawGrabber);
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+
     switch(position){
       case 1: ticks = RobotMap.CLAW_OPEN_POSITION;
       break;
@@ -31,8 +30,6 @@ public class GrabToPosition extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-
-
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -69,6 +66,7 @@ public class GrabToPosition extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.m_clawGrabber.setPercentage(0);
   }
 
   // Called when another command which requires one or more of the same
