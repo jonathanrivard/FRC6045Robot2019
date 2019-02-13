@@ -37,6 +37,7 @@ public class Lift extends Subsystem { //Subsystem for elevator lift
     liftMotor.setInverted(true); //Positive value lifts up, needed invert to do that
     liftMotor.configPeakCurrentDuration(0, 30);
     liftMotor.setSelectedSensorPosition(0);
+    //topLimit = new DigitalInput(RobotMap)
   }
 
   @Override
