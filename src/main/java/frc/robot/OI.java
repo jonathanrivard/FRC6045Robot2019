@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.GrabToPosition;
 import frc.robot.commands.MoveLift;
+import frc.robot.commands.RunBelt;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -38,6 +39,9 @@ public class OI {
   //-Claw Button
   Button buttonClawPositionHatchPos = new JoystickButton(controlJoystick, RobotMap.GRAB_HATCH_POS);
   public OI(){
+    //Belt Buttons
+    controlButtonTrigger.whileHeld(new RunBelt(1));
+    controlButtonThumb.whileHeld(new RunBelt(-1));
     //Create the position buttons
     buttonPositionOne.whileHeld(new MoveLift(1));
     buttonPositionTwo.whileHeld(new MoveLift(2));
