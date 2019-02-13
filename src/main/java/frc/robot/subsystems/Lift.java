@@ -31,7 +31,7 @@ public class Lift extends Subsystem {
   public Lift(){
     encoderMotor = new TalonSRX(0);
     liftMotor = new TalonSRX(13);
-    liftMotor.setInverted(false);
+    liftMotor.setInverted(true);
     encoderMotor.configPeakCurrentDuration(0, 30);
     encoderMotor.setSelectedSensorPosition(0);
   }
