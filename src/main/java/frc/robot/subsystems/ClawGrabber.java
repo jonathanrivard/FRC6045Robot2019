@@ -36,8 +36,8 @@ public class ClawGrabber extends Subsystem {
     grabMotor.configPeakCurrentDuration(0, 30);
     grabMotor.setSelectedSensorPosition(0);
     //Limit switch
-    //openLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_GRABBER_OPEN);
-    //closedLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_GRABBER_CLOSED);
+    openLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_GRABBER_OPEN);
+    closedLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_GRABBER_CLOSED);
   }
 
   //Set speed of grab motor
