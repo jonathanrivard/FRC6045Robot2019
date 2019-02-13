@@ -67,6 +67,7 @@ public class TestCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    speed = Robot.m_oi.joystick.getY();
     double throttleValue = Robot.m_oi.joystick.getThrottle();
     throttleValue = (throttleValue * -1 + 1) / 2; //Scale value (original is from -1 to 1, up is -1)
     motor.set(ControlMode.PercentOutput, speed * throttleValue);
@@ -77,7 +78,6 @@ public class TestCommand extends Command {
   @Override
   protected boolean isFinished() {
     return false;
-
   }
 
   // Called once after isFinished returns true
