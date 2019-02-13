@@ -36,8 +36,8 @@ public class OI {
   public OI(){
     button1.whileHeld(new MoveLift(40000));
     button2.whileHeld(new MoveLift(0));
-    button3.whileHeld(new TestCommand(0.2));
-    button4.whileHeld(new TestCommand(-0.2));
+    button3.whileHeld(new TestCommand(0.8));
+    button4.whileHeld(new TestCommand(-0.8));
 
     //Lift Positions
     /*

@@ -27,7 +27,7 @@ public class MoveLift extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    long current = Robot.m_Lift.getEncoderMotor().getSelectedSensorPosition();
+    long current = 0; //Robot.m_Lift.g.getSelectedSensorPosition();
     long error = position - current;
 
     System.out.println(error + " ; " + current);

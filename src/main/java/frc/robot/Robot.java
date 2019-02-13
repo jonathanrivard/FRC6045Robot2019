@@ -55,7 +55,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    c = new TestCommand();
+    //c = new TestCommand();
     
    // m_chooser.setDefaultOption("Default Auto", new DriveArcade());
     // chooser.addOption("My Auto", new MyAutoCommand());
