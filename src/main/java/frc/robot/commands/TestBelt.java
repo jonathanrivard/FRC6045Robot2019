@@ -11,8 +11,6 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class TestBelt extends Command {
   public TestBelt() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time

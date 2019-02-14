@@ -31,5 +31,6 @@ public class RobotMap {
     //Scalers
     public static float SCALER_PUSHER = 0.3f;
     public static float SCLAER_LIFT = 0.3f;
+    public static float SCALER_TEST = 0.8f;
 }
 
