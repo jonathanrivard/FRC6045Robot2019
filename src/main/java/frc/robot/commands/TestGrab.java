@@ -8,9 +8,12 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 public class TestGrab extends Command {
   public TestGrab() {
+    requires(Robot.m_clawGrabber);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -23,10 +26,20 @@ public class TestGrab extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double input = Robot.m_oi.controlJoystick.getY() * -1;
+   
+    if(Robot.m_clawGrabber.getOpenLimit() && input > 0){ //If the open limit is pressed and we are tring to go up
+      Robot.m_clawGrabber.setPercentage(0); //Then don't
+    }else if(Robot.m_clawGrabber.getClosedLimit() && input < 0){//If the closed limit is pressed and we are tring to go down
+      Robot.m_clawGrabber.setPercentage(0); //Then don't
+    }else { //If neither of those
+      Robot.m_clawGrabber.setPercentage(input * RobotMap.RIGHT_JOYSTICK); //Set the lift speed
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
+  
   protected boolean isFinished() {
     return false;
   }
