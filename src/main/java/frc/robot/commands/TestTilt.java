@@ -8,11 +8,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class TestTilt extends Command {
   public TestTilt() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.m_clawTilter);
   }
 
   // Called just before this Command runs the first time
@@ -23,6 +23,15 @@ public class TestTilt extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double input = Robot.m_oi.controlJoystick.getY() * -1;
+
+    if(Robot.m_clawTilter.getTopLimit() && input > 0){
+      Robot.m_clawTilter.setPercentage(0);
+    }else if(Robot.m_clawTilter.getBottomLimit() && input < 0){
+      Robot.m_clawTilter.setPercentage(0);
+    }else {
+      Robot.m_clawTilter.setPercentage(input);
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -34,6 +43,7 @@ public class TestTilt extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.m_clawTilter.setPercentage(0);
   }
 
   // Called when another command which requires one or more of the same
