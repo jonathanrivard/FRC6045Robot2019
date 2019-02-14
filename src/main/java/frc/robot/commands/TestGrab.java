@@ -9,13 +9,10 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
 
 public class TestGrab extends Command {
   public TestGrab() {
     requires(Robot.m_clawGrabber);
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time
@@ -33,7 +30,7 @@ public class TestGrab extends Command {
     }else if(Robot.m_clawGrabber.getClosedLimit() && input < 0){//If the closed limit is pressed and we are tring to go down
       Robot.m_clawGrabber.setPercentage(0); //Then don't
     }else { //If neither of those
-      Robot.m_clawGrabber.setPercentage(input * RobotMap.RIGHT_JOYSTICK); //Set the lift speed
+      Robot.m_clawGrabber.setPercentage(input); //Set the lift speed
     }
   }
 
@@ -47,11 +44,13 @@ public class TestGrab extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.m_clawGrabber.setPercentage(0);
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }
