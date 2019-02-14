@@ -8,12 +8,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
-import frc.robot.RobotMap;
 
-public class TankDrive extends Command {
-  public TankDrive() {
-    requires(Robot.m_drivetrain); //Require the drivestrain system
+public class TestBelt extends Command {
+  public TestBelt() {
+    // Use requires() here to declare subsystem dependencies
+    // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time
@@ -24,15 +23,6 @@ public class TankDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    //Get the two joystick axis
-    double leftSpeed = Robot.m_oi.leftJoystick.getY();
-    double rightSpeed = Robot.m_oi.rightJoystick.getY();
-    //Get the throttle from the left joystick
-    double scaler = Robot.m_oi.leftJoystick.getThrottle();
-    //Trun the scaler into something we can use
-    scaler = ((scaler * -1 + 1) / 2) * RobotMap.SCALER_DRIVE; 
-    //Send values to drivetrain for tankdrive
-    Robot.m_drivetrain.tankDrive(leftSpeed * scaler * -1, rightSpeed * scaler * -1);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -50,6 +40,5 @@ public class TankDrive extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    end();
   }
 }

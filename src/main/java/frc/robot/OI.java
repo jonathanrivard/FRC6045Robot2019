@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.GrabToPosition;
 import frc.robot.commands.MoveLift;
+import frc.robot.commands.RunBelt;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -36,8 +37,11 @@ public class OI {
   Button buttonPositionSeven = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_SEVEN);
   Button buttonPositionEight = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_EIGHT);
   //-Claw Button
-  Button buttonClawPositionHatchPods = new JoystickButton(controlJoystick, RobotMap.GRAB_HATCH_POS);
+  Button buttonClawPositionHatchPos = new JoystickButton(controlJoystick, RobotMap.GRAB_HATCH_POS);
   public OI(){
+    //Belt Buttons
+    controlButtonTrigger.whileHeld(new RunBelt(1));
+    controlButtonThumb.whileHeld(new RunBelt(-1));
     //Create the position buttons
     buttonPositionOne.whileHeld(new MoveLift(1));
     buttonPositionTwo.whileHeld(new MoveLift(2));
@@ -47,7 +51,7 @@ public class OI {
     buttonPositionSix.whileHeld(new MoveLift(6));
     buttonPositionSeven.whileHeld(new MoveLift(7));
     buttonPositionEight.whileHeld(new MoveLift(8));
-    buttonClawPositionHatchPods.whileHeld(new GrabToPosition(9));}
+    buttonClawPositionHatchPos.whileHeld(new GrabToPosition(9));}
 
   public int getLiftDirection(){ //Get if the POV is reading up or down for ManualLift command
     int input = controlJoystick.getPOV(); //Get the degrees of the POV (0 to 360 clockwise)

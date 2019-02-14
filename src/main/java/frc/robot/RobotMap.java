@@ -20,6 +20,9 @@ public class RobotMap {
     public static int RIGHT_JOYSTICK = 2;
     public static int RIGHT_JOYSTICK_TRIGGER = 0;
     //DIGITAL INPUTS
+    //-Lift
+    public static int DIGITAL_LIFT_UP = 4;
+    public static int DIGITAL_LIFT_DOWN = 5;
     //-Claw
     //--Grabber
     public static int DIGITAL_CLAW_GRABBER_OPEN = 0;

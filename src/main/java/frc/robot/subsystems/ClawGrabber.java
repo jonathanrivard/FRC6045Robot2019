@@ -13,6 +13,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.ManualGrab;
 
 public class ClawGrabber extends Subsystem {
   //INSTANCE VARIABLES
@@ -36,8 +37,8 @@ public class ClawGrabber extends Subsystem {
     grabMotor.configPeakCurrentDuration(0, 30);
     grabMotor.setSelectedSensorPosition(0);
     //Limit switch
-    //openLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_GRABBER_OPEN);
-    //closedLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_GRABBER_CLOSED);
+    openLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_GRABBER_OPEN);
+    closedLimit = new DigitalInput(RobotMap.DIGITAL_CLAW_GRABBER_CLOSED);
   }
 
   //Set speed of grab motor
@@ -48,6 +49,6 @@ public class ClawGrabber extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+     setDefaultCommand(new ManualGrab());
   }
 }
