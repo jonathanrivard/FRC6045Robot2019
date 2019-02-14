@@ -40,7 +40,10 @@ public class Lift extends Subsystem { //Subsystem for elevator lift
     //Setup limit switches
     topLimit = new DigitalInput(RobotMap.DIGITAL_LIFT_UP);
     bottomLimit = new DigitalInput(RobotMap.DIGITAL_LIFT_DOWN);
+<<<<<<< HEAD
     
+=======
+>>>>>>> 44a6d1da5465855ba27ab781c7823313c2c75f8e
   }
 
   @Override
