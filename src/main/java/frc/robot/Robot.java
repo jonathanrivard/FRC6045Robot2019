@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.TestCommand;
 import frc.robot.subsystems.*;
 
@@ -28,14 +29,25 @@ public class Robot extends TimedRobot {
   //This function is run when the robot starts up
   @Override
   public void robotInit() {
+    //Subsystems
     m_drivetrain = new Drivetrain();
     m_lift = new Lift();
     m_clawGrabber = new ClawGrabber();
     m_clawBelt = new ClawBelt();
     m_clawTilter = new ClawTilter();
+    //OI
     m_oi = new OI();
+    //Commands
     testCommand = new TestCommand();
+    //Comand Server
     CameraServer.getInstance().startAutomaticCapture();
+    //Smart Dashboard
+    SmartDashboard.putData("Scheduler", Scheduler.getInstance());
+    SmartDashboard.putData(m_drivetrain);
+    SmartDashboard.putData(m_lift);
+    SmartDashboard.putData(m_clawGrabber);
+    SmartDashboard.putData(m_clawBelt);
+    SmartDashboard.putData(m_clawTilter);
   }
 
   //This function is called every robot packet, no matter the mode
