@@ -13,6 +13,10 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.GrabToPosition;
 import frc.robot.commands.MoveLift;
 import frc.robot.commands.RunBelt;
+import frc.robot.commands.TestBelt;
+import frc.robot.commands.TestGrab;
+import frc.robot.commands.TestLift;
+import frc.robot.commands.TestTilt;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -43,15 +47,22 @@ public class OI {
     controlButtonTrigger.whileHeld(new RunBelt(1));
     controlButtonThumb.whileHeld(new RunBelt(-1));
     //Create the position buttons
-    buttonPositionOne.whileHeld(new MoveLift(1));
-    buttonPositionTwo.whileHeld(new MoveLift(2));
-    buttonPositionThree.whileHeld(new MoveLift(3));
-    buttonPositionFour.whileHeld(new MoveLift(4));
+    //buttonPositionOne.whileHeld(new MoveLift(1));
+    //buttonPositionTwo.whileHeld(new MoveLift(2));
+    //buttonPositionThree.whileHeld(new MoveLift(3));
+    //buttonPositionFour.whileHeld(new MoveLift(4));
     buttonPositionFive.whileHeld(new MoveLift(5));
     buttonPositionSix.whileHeld(new MoveLift(6));
     buttonPositionSeven.whileHeld(new MoveLift(7));
     buttonPositionEight.whileHeld(new MoveLift(8));
-    buttonClawPositionHatchPos.whileHeld(new GrabToPosition(9));}
+    buttonClawPositionHatchPos.whileHeld(new GrabToPosition(9));
+
+    //Testing using position buttons
+    buttonPositionOne.whileHeld(new TestLift());
+    buttonPositionTwo.whileHeld(new TestGrab());
+    buttonPositionThree.whileHeld(new TestTilt());
+    buttonPositionFour.whileHeld(new TestBelt());
+  }
 
   public int getLiftDirection(){ //Get if the POV is reading up or down for ManualLift command
     int input = controlJoystick.getPOV(); //Get the degrees of the POV (0 to 360 clockwise)
