@@ -26,13 +26,16 @@ public class ManualGrab extends Command {
   protected void execute() {
     double input = Robot.m_oi.controlJoystick.getZ();
     
+    /*
     if(Robot.m_clawGrabber.getOpenLimit() && input > 0){ //If the open limit is pressed and we are tring to go up
       Robot.m_clawGrabber.setPercentage(0); //Then don't
     }else if(Robot.m_clawGrabber.getClosedLimit() && input < 0){//If the closed limit is pressed and we are tring to go down
       Robot.m_clawGrabber.setPercentage(0); //Then don't
     }else { //If neither of those
       Robot.m_clawGrabber.setPercentage(input * RobotMap.SCALER_CLAW_GRAB); //Set the lift speed
-    }
+    } */
+
+    Robot.m_clawGrabber.setPercentage(input * RobotMap.SCALER_CLAW_GRAB);
     
   }
 

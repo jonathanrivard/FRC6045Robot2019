@@ -25,13 +25,17 @@ public class TestLift extends Command {
   protected void execute() {
     double input = Robot.m_oi.controlJoystick.getY() * -1;
 
+    /*
     if(Robot.m_lift.getTopLimit() && input > 0){
       Robot.m_lift.setPercentage(0);
     }else if(Robot.m_lift.getBottomLimit() && input < 0){
       Robot.m_lift.setPercentage(0);
     }else {
       Robot.m_lift.setPercentage(input);
-    }
+    } */
+
+    input *= Robot.m_oi.getControlThrottleScaler();
+    Robot.m_lift.setPercentage(input);
   }
 
   // Make this return true when this Command no longer needs to run execute()

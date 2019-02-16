@@ -25,13 +25,17 @@ public class TestTilt extends Command {
   protected void execute() {
     double input = Robot.m_oi.controlJoystick.getY() * -1;
 
+    /*
     if(Robot.m_clawTilter.getTopLimit() && input > 0){
       Robot.m_clawTilter.setPercentage(0);
     }else if(Robot.m_clawTilter.getBottomLimit() && input < 0){
       Robot.m_clawTilter.setPercentage(0);
     }else {
       Robot.m_clawTilter.setPercentage(input);
-    }
+    }*/
+
+    input *= Robot.m_oi.getControlThrottleScaler();
+    Robot.m_clawTilter.setPercentage(input);
   }
 
   // Make this return true when this Command no longer needs to run execute()

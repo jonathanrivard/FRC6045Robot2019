@@ -49,10 +49,11 @@ public class RobotMap {
     // Manual tilt is y axis
     //SCALER
     public static float SCALER_DRIVE = 0.7f;
-    public static float SCALER_LIFT_MANUAL = 0.3f;
-    public static float SCALER_LIFT_AUTO = 0.1f;
+    public static float SCALER_LIFT_MANUAL = 0.8f;
+    public static float SCALER_LIFT_AUTO = 0.6f;
     public static float SCALER_CLAW_GRAB = 0.3f;
     public static float SCALER_CLAW_BELT = 0.3f;
+    public static float SCALER_CLAW_TILT = 0.3f;
     //LIFT POSITIONS
     public static int POS_ONE = 0; //Top Ball Height
     public static int POS_TWO = 0; //Second to Top Height
