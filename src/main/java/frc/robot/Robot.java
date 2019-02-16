@@ -21,6 +21,7 @@ public class Robot extends TimedRobot {
   public static ClawBelt m_clawBelt;
   public static ClawGrabber m_clawGrabber;
   public static ClawTilter m_clawTilter;
+  public static Hook m_hook;
   //OI
   public static OI m_oi;
   //Command
@@ -35,6 +36,7 @@ public class Robot extends TimedRobot {
     m_clawGrabber = new ClawGrabber();
     m_clawBelt = new ClawBelt();
     m_clawTilter = new ClawTilter();
+    m_hook = new Hook();
     //OI
     m_oi = new OI();
     //Commands
