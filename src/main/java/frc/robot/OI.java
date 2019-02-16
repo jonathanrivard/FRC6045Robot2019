@@ -47,10 +47,10 @@ public class OI {
     controlButtonTrigger.whileHeld(new RunBelt(1));
     controlButtonThumb.whileHeld(new RunBelt(-1));
     //Create the position buttons
-    //buttonPositionOne.whileHeld(new MoveLift(1));
-    //buttonPositionTwo.whileHeld(new MoveLift(2));
-    //buttonPositionThree.whileHeld(new MoveLift(3));
-    //buttonPositionFour.whileHeld(new MoveLift(4));
+    buttonPositionOne.whileHeld(new MoveLift(1));
+    buttonPositionTwo.whileHeld(new MoveLift(2));
+    buttonPositionThree.whileHeld(new MoveLift(3));
+    buttonPositionFour.whileHeld(new MoveLift(4));
     buttonPositionFive.whileHeld(new MoveLift(5));
     buttonPositionSix.whileHeld(new MoveLift(6));
     buttonPositionSeven.whileHeld(new MoveLift(7));
@@ -58,10 +58,10 @@ public class OI {
     buttonClawPositionHatchPos.whileHeld(new GrabToPosition(9));
 
     //Testing using position buttons
-    buttonPositionOne.whileHeld(new TestLift());
-    buttonPositionTwo.whileHeld(new TestGrab());
-    buttonPositionThree.whileHeld(new TestTilt());
-    buttonPositionFour.whileHeld(new TestBelt());
+    //buttonPositionOne.whileHeld(new TestLift());
+    //buttonPositionTwo.whileHeld(new TestGrab());
+    //buttonPositionThree.whileHeld(new TestTilt());
+    //buttonPositionFour.whileHeld(new TestBelt());
   }
 
   public int getLiftDirection(){ //Get if the POV is reading up or down for ManualLift command

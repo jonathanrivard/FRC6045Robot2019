@@ -29,7 +29,7 @@ public class ClawBelt extends Subsystem {
     beltMotorLeft = new VictorSPX(RobotMap.MOTOR_CLAW_BELT_LEFT);
     beltMotorLeft.setInverted(false);
     beltMotorRight = new VictorSPX(RobotMap.MOTOR_CLAW_BELT_RIGHT);
-    beltMotorRight.setInverted(true);
+    beltMotorRight.setInverted(false);
   }
 
   //Set speed of belt motor
