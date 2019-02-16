@@ -8,9 +8,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class TestBelt extends Command {
   public TestBelt() {
+    requires(Robot.m_Claw);
   }
 
   // Called just before this Command runs the first time

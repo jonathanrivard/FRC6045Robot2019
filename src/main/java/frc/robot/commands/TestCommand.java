@@ -70,8 +70,16 @@ public class TestCommand extends Command {
     speed = Robot.m_oi.joystick.getY();
     double throttleValue = Robot.m_oi.joystick.getThrottle();
     throttleValue = (throttleValue * -1 + 1) / 2; //Scale value (original is from -1 to 1, up is -1)
-    motor.set(ControlMode.PercentOutput, speed * throttleValue);
-    System.out.println("EXAMACUTING");
+
+    if(Robot.m_Lift.getTopLimit() && speed > 0){
+      Robot.m_Lift.setPercentage(0);
+    }else if(Robot.m_Lift.getTopLimit() && speed < 0){
+      Robot.m_Lift.setPercentage(0);
+    }else {
+      Robot.m_Lift.setPercentage(speed * throttleValue);
+    }
+    System.out.println("Setting lift motor to: " + speed * throttleValue);
+
   }
 
   // Make this return true when this Command no longer needs to run execute()

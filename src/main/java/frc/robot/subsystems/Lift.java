@@ -37,7 +37,8 @@ public class Lift extends Subsystem { //Subsystem for elevator lift
     liftMotor.setInverted(false); //Positive value lifts up
     liftMotor.configPeakCurrentDuration(0, 30);
     liftMotor.setSelectedSensorPosition(0);
-    //topLimit = new DigitalInput(RobotMap)
+    topLimit = new DigitalInput(0);
+    bottomLimit = new DigitalInput(1);
   }
 
   @Override
