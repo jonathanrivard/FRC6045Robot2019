@@ -89,7 +89,9 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
-    testCommand.start();
+    //Not currently testing
+    //testCommand.start();
+    m_lift.setCurrentPosition(0);
   }
 
   //This function is called periodically during operator control.

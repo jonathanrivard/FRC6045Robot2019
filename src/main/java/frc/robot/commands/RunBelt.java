@@ -27,7 +27,13 @@ public class RunBelt extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_clawBelt.setPercentage(direction * RobotMap.SCALER_CLAW_BELT);
+    if(direction > 0){
+      Robot.m_clawBelt.setPercentage(direction * RobotMap.SCALER_CLAW_BELT_OUT);
+    }else if(direction < 0){
+      Robot.m_clawBelt.setPercentage(direction * RobotMap.SCALER_CLAW_BELT_IN);
+    }else{
+      Robot.m_clawBelt.setPercentage(0);
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()

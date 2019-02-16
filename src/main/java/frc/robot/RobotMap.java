@@ -51,18 +51,19 @@ public class RobotMap {
     // Manual tilt is y axis
     //SCALER
     public static float SCALER_DRIVE = 0.7f;
-    public static float SCALER_LIFT_MANUAL = 0.8f;
+    public static float SCALER_LIFT_MANUAL = 0.6f;
     public static float SCALER_LIFT_AUTO = 0.6f;
-    public static float SCALER_CLAW_GRAB = 0.3f;
-    public static float SCALER_CLAW_BELT = 0.3f;
-    public static float SCALER_CLAW_TILT = 0.3f;
+    public static float SCALER_CLAW_GRAB = 0.5f;
+    public static float SCALER_CLAW_BELT_OUT = 0.8f;
+    public static float SCALER_CLAW_BELT_IN = 0.4f;
+    public static float SCALER_CLAW_TILT = 0.5f;
     //LIFT POSITIONS
-    public static int POS_ONE = 0; //Top Ball Height
-    public static int POS_TWO = 0; //Second to Top Height
-    public static int POS_THREE = 0; //Third to Top Height
-    public static int POS_FOUR = 0; //Four to Top Height
-    public static int POS_FIVE = 0; //Fifth to Top Height
-    public static int POS_SIX = 0; //Bottom Ball and Hatch Height
+    public static int POS_ONE = 23350; //Top Ball Height
+    public static int POS_TWO = 23350; //Second to Top Height
+    public static int POS_THREE = 13500; //Third to Top Height
+    public static int POS_FOUR = 13500; //Four to Top Height
+    public static int POS_FIVE = 5270; //Fifth to Top Height
+    public static int POS_SIX = 2900; //Bottom Ball and Hatch Height
     public static int POS_SEVEN = 0; //Shuttle Ball Height
     public static int POS_EIGHT = 0; //Bottom
 }

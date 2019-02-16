@@ -24,7 +24,7 @@ public class ManualTilt extends Command { //Manual Tilt Command using control jo
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double input = Robot.m_oi.controlJoystick.getZ(); //Get z axis
+    double input = Robot.m_oi.controlJoystick.getY(); //Get z axis
     
     /*
     if(input > 0 && Robot.m_clawTilter.getTopLimit()){ //If we are going up and we hit the up limit

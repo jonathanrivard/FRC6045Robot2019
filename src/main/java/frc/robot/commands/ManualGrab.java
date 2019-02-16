@@ -35,7 +35,7 @@ public class ManualGrab extends Command {
       Robot.m_clawGrabber.setPercentage(input * RobotMap.SCALER_CLAW_GRAB); //Set the lift speed
     } */
 
-    Robot.m_clawGrabber.setPercentage(input * RobotMap.SCALER_CLAW_GRAB);
+    Robot.m_clawGrabber.setPercentage(input * RobotMap.SCALER_CLAW_GRAB * -1); //Invert
     
   }
 
