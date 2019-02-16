@@ -35,13 +35,15 @@ public class RobotMap {
     public static int MOTOR_LEFT_FRONT = 14;
     public static int MOTOR_LEFT_BACK = 15;
     public static int MOTOR_RIGHT_FRONT = 1;
-    public static int MOTOR_RIGHT_BACK = 10;
+    public static int MOTOR_RIGHT_BACK = 0;
     //-Lift
     public static int MOTOR_LIFT = 13;
     //-Claw
-    public static int MOTOR_CLAW = 0;
+    public static int MOTOR_CLAW = 2;
     public static int MOTOR_CLAW_TILT = 0;
-    public static int MOTOR_CLAW_BELT = 0;
+    public static int MOTOR_CLAW_BELT_LEFT = 12;
+    public static int MOTOR_CLAW_BELT_RIGHT = 3;
+    //
     public static int GRAB_HATCH_POS = 5;
     public static int CLAW_CLOSED_POSITION = 0;
     public static int CLAW_OPEN_POSITION = 0;
