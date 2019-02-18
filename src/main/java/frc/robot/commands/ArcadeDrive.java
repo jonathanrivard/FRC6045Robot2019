@@ -26,11 +26,10 @@ public class ArcadeDrive extends Command {
   @Override
   protected void execute() {
     //Get each axis
-    double xSpeed = Robot.m_oi.rightJoystick.getY(); //Forward axis
-    double zRotate = Robot.m_oi.rightJoystick.getX(); //Side to side for rotation axis
+    double xSpeed = Robot.m_oi.controlJoystick.getY(); //Forward axis
+    double zRotate = Robot.m_oi.controlJoystick.getX(); //Side to side for rotation axis
     //Get the throttle value
-    double scaler = Robot.m_oi.rightJoystick.getThrottle();
-    scaler = (scaler * -1 + 1) / 2; //Change the scaler to a usable value
+    double scaler = Robot.m_oi.getControlThrottleScaler();
     Robot.m_drivetrain.arcadeDrive(xSpeed * -1 * scaler, zRotate * scaler); //Use arcade drive
    
   }
