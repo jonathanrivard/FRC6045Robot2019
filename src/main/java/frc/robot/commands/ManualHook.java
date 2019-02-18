@@ -26,7 +26,8 @@ public class ManualHook extends Command {
   protected void execute() {
     double input = Robot.m_oi.leftJoystick.getY(); //Get z axis
     
-    Robot.m_hook.setPercentage(input * RobotMap.SCALER_HOOK);
+    Robot.m_hook.setPercentage(input * RobotMap.SCALER_HOOK * Robot.m_oi.getControlThrottleScaler());
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()
