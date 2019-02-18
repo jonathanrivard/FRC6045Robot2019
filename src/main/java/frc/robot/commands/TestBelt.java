@@ -25,6 +25,7 @@ public class TestBelt extends Command {
   protected void execute() {
     double input = Robot.m_oi.controlJoystick.getY() * -1;
 
+    input *= Robot.m_oi.getControlThrottleScaler();
     Robot.m_clawBelt.setPercentage(input);
   }
 

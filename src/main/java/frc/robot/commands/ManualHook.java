@@ -9,10 +9,11 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 
-public class TestTilt extends Command {
-  public TestTilt() {
-    requires(Robot.m_clawTilter);
+public class ManualHook extends Command {
+  public ManualHook() {
+    requires(Robot.m_hook);
   }
 
   // Called just before this Command runs the first time
@@ -23,31 +24,21 @@ public class TestTilt extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double input = Robot.m_oi.controlJoystick.getY() * -1;
-
-    /*
-    if(Robot.m_clawTilter.getTopLimit() && input > 0){
-      Robot.m_clawTilter.setPercentage(0);
-    }else if(Robot.m_clawTilter.getBottomLimit() && input < 0){
-      Robot.m_clawTilter.setPercentage(0);
-    }else {
-      Robot.m_clawTilter.setPercentage(input);
-    }*/
-
-    input *= Robot.m_oi.getControlThrottleScaler();
-    Robot.m_clawTilter.setPercentage(input);
+    double input = Robot.m_oi.controlJoystick.getY(); //Get z axis
+    
+    Robot.m_hook.setPercentage(input * RobotMap.SCALER_HOOK);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return false; 
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_clawTilter.setPercentage(0);
+    Robot.m_hook.setPercentage(0);
   }
 
   // Called when another command which requires one or more of the same
