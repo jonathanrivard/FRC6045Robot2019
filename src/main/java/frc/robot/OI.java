@@ -87,4 +87,18 @@ public class OI {
 
     return scaler;
   }
+
+  public double getLeftThrottleScaler(){
+    double scaler = leftJoystick.getThrottle();
+    scaler = (scaler * -1 + 1) / 2; //Change the scaler to a usable value
+
+    return scaler;
+  }
+
+  public double getRightThrottleScaler(){
+    double scaler = rightJoystick.getThrottle();
+    scaler = (scaler * -1 + 1) / 2; //Change the scaler to a usable value
+
+    return scaler;
+  }
 }
