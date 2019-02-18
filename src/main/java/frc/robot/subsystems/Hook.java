@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.ManualHook;
 
 public class Hook extends Subsystem {
   //INSTANCE VARIABLES
@@ -29,6 +30,7 @@ public class Hook extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
+   setDefaultCommand(new ManualHook());
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
