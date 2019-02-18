@@ -13,10 +13,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.GrabToPosition;
 import frc.robot.commands.MoveLift;
 import frc.robot.commands.RunBelt;
-import frc.robot.commands.TestBelt;
-import frc.robot.commands.TestGrab;
-import frc.robot.commands.TestLift;
-import frc.robot.commands.TestTilt;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -32,14 +28,14 @@ public class OI {
   Button controlButtonTrigger = new JoystickButton(controlJoystick, RobotMap.CONTROL_JOYSTICK_TRIGGER);
   Button controlButtonThumb = new JoystickButton(controlJoystick, RobotMap.CONTROL_JOYSTICK_THUMB);
   //-Position Buttons
-  Button buttonPositionOne = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_ONE);
-  Button buttonPositionTwo = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_TWO);
-  Button buttonPositionThree = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_THREE);
-  Button buttonPositionFour = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_FOUR);
-  Button buttonPositionFive = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_FIVE);
-  Button buttonPositionSix = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_SIX);
-  Button buttonPositionSeven = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_SEVEN);
-  Button buttonPositionEight = new JoystickButton(controlJoystick, RobotMap.CONTROL_POS_EIGHT);
+  Button buttonPositionOne = new JoystickButton(rightJoystick, RobotMap.RIGHT_POS_ONE);
+  Button buttonPositionTwo = new JoystickButton(rightJoystick, RobotMap.RIGHT_POS_TWO);
+  Button buttonPositionThree = new JoystickButton(rightJoystick, RobotMap.RIGHT_POS_THREE);
+  Button buttonPositionFour = new JoystickButton(rightJoystick, RobotMap.RIGHT_POS_FOUR);
+  Button buttonPositionFive = new JoystickButton(rightJoystick, RobotMap.RIGHT_POS_FIVE);
+  Button buttonPositionSix = new JoystickButton(rightJoystick, RobotMap.RIGHT_POS_SIX);
+  Button buttonPositionSeven = new JoystickButton(rightJoystick, RobotMap.RIGHT_POS_SEVEN);
+  Button buttonPositionEight = new JoystickButton(rightJoystick, RobotMap.RIGHT_POS_EIGHT);
   //-Claw Button
   Button buttonClawPositionHatchPos = new JoystickButton(controlJoystick, RobotMap.GRAB_HATCH_POS);
   public OI(){
@@ -62,23 +58,6 @@ public class OI {
     //buttonPositionTwo.whileHeld(new TestGrab());
     //buttonPositionThree.whileHeld(new TestTilt());
     //buttonPositionFour.whileHeld(new TestBelt());
-  }
-
-  public int getLiftDirection(){ //Get if the POV is reading up or down for ManualLift command
-    int input = controlJoystick.getPOV(); //Get the degrees of the POV (0 to 360 clockwise)
-    int output; //0, -1, or 1 to output
-
-    if(input == -1){ //If the POV is in the middle
-      output = 0; //Nothing/Middle
-    }else if (input == 0){ //If the POV is pushed up
-      output = 1; //Set to up
-    }else if(input == 180){  //If the POV is pushed down
-      output = -1; //Set to down
-    }else {
-      output = 0; //Set to no movement
-    }
-    
-    return output; //Return direction
   }
 
   public double getControlThrottleScaler(){

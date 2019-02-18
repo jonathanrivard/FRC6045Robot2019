@@ -74,9 +74,9 @@ public class MoveLift extends Command { //Moves the lift to the desired position
 
     //Go to the desired position, within the threshold to prevent osolation 
     if(error > threshold){
-      Robot.m_lift.setPercentage(RobotMap.SCALER_LIFT_AUTO * Robot.m_oi.getControlThrottleScaler());
+      Robot.m_lift.setPercentage(RobotMap.SCALER_LIFT_AUTO * Robot.m_oi.getRightThrottleScaler());
     }else if (error < -1 * threshold){
-      Robot.m_lift.setPercentage(-1 * (RobotMap.SCALER_LIFT_AUTO * Robot.m_oi.getControlThrottleScaler()));
+      Robot.m_lift.setPercentage(-1 * (RobotMap.SCALER_LIFT_AUTO * Robot.m_oi.getRightThrottleScaler()));
     }else {
       Robot.m_lift.setPercentage(0);
     }

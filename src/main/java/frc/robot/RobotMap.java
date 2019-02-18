@@ -5,20 +5,20 @@ public class RobotMap {
     public static int CONTROL_JOYSTICK = 0;
     public static int CONTROL_JOYSTICK_TRIGGER = 1;
     public static int CONTROL_JOYSTICK_THUMB = 2;
-    public static int CONTROL_POS_ONE = 7; 
-    public static int CONTROL_POS_TWO = 8; 
-    public static int CONTROL_POS_THREE = 9; 
-    public static int CONTROL_POS_FOUR = 10; 
-    public static int CONTROL_POS_FIVE = 11; 
-    public static int CONTROL_POS_SIX = 12; 
-    public static int CONTROL_POS_SEVEN = 4; 
-    public static int CONTROL_POS_EIGHT = 3; 
     //LEFT JOYSTICK
     public static int LEFT_JOYSTICK = 1;
     public static int LEFT_JOYSTICK_TRIGGER = 0;
     //RIGHT JOYSTICK
     public static int RIGHT_JOYSTICK = 2;
     public static int RIGHT_JOYSTICK_TRIGGER = 0;
+    public static int RIGHT_POS_ONE = 13; 
+    public static int RIGHT_POS_TWO = 12; 
+    public static int RIGHT_POS_THREE = 11; 
+    public static int RIGHT_POS_FOUR = 14; 
+    public static int RIGHT_POS_FIVE = 15; 
+    public static int RIGHT_POS_SIX = 16; 
+    public static int RIGHT_POS_SEVEN = 4; 
+    public static int RIGHT_POS_EIGHT = 3; 
     //DIGITAL INPUTS
     //-Lift
     public static int DIGITAL_LIFT_UP = 4;
