@@ -35,6 +35,7 @@ public class Robot extends TimedRobot {
     //Commands
     //Comand Server
     CameraServer.getInstance().startAutomaticCapture();
+    CameraServer.getInstance().startAutomaticCapture();
     //Smart Dashboard
     SmartDashboard.putData("Scheduler", Scheduler.getInstance());
     SmartDashboard.putData(m_drivetrain);
