@@ -7,25 +7,29 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 import frc.robot.commands.ManualHook;
 
 public class Hook extends Subsystem {
   //INSTANCE VARIABLES
-  Spark tiltMotor;
+  TalonSRX tiltMotor;
   //GETTERS
-  public Spark getTiltMotor() { return tiltMotor; }
+  public TalonSRX getTiltMotor() { return tiltMotor; }
 
   public Hook(){
     //Setup tilt motor
-    tiltMotor = new Spark(RobotMap.MOTOR_HOOK);
+    tiltMotor = new TalonSRX(RobotMap.MOTOR_HOOK);
     tiltMotor.setInverted(false);
   }
 
   public void setPercentage(double per){
-    tiltMotor.set(per * RobotMap.SCALER_HOOK);
+    tiltMotor.set(ControlMode.PercentOutput, per * RobotMap.SCALER_HOOK * Robot.m_oi.getLeftThrottleScaler());
   }
 
   @Override
