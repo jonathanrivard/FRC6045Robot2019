@@ -8,7 +8,7 @@
 package frc.robot.commands;
 
 import frc.robot.Robot;
-
+import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class ArcadeDrive extends Command {
@@ -30,7 +30,7 @@ public class ArcadeDrive extends Command {
     double zRotate = Robot.m_oi.controlJoystick.getX(); //Side to side for rotation axis
     //Get the throttle value
     double scaler = Robot.m_oi.getControlThrottleScaler();
-    Robot.m_drivetrain.arcadeDrive(xSpeed * -1 * scaler, zRotate * scaler); //Use arcade drive
+    Robot.m_drivetrain.arcadeDrive(xSpeed * -1 * scaler * RobotMap.SCALER_DRIVE, zRotate * scaler * RobotMap.SCALER_DRIVE); //Use arcade drive
    
   }
 

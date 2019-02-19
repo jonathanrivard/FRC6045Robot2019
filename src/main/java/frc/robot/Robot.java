@@ -12,21 +12,16 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.TestCommand;
-import frc.robot.commands.TestLift;
 import frc.robot.subsystems.*;
 
 public class Robot extends TimedRobot {
   //Subsystems
   public static Drivetrain m_drivetrain;
   public static Lift m_lift;
-  public static ClawBelt m_clawBelt;
-  public static ClawGrabber m_clawGrabber;
-  public static ClawTilter m_clawTilter;
   public static Hook m_hook;
   //OI
   public static OI m_oi;
-  //Command
-  TestLift testCommand;
+  //Commands
 
   //This function is run when the robot starts up
   @Override
@@ -34,23 +29,17 @@ public class Robot extends TimedRobot {
     //Subsystems
     m_drivetrain = new Drivetrain();
     m_lift = new Lift();
-    m_clawGrabber = new ClawGrabber();
-    m_clawBelt = new ClawBelt();
-    m_clawTilter = new ClawTilter();
     m_hook = new Hook();
     //OI
     m_oi = new OI();
     //Commands
-    testCommand = new TestLift();
     //Comand Server
     CameraServer.getInstance().startAutomaticCapture();
     //Smart Dashboard
     SmartDashboard.putData("Scheduler", Scheduler.getInstance());
     SmartDashboard.putData(m_drivetrain);
     SmartDashboard.putData(m_lift);
-    SmartDashboard.putData(m_clawGrabber);
-    SmartDashboard.putData(m_clawBelt);
-    SmartDashboard.putData(m_clawTilter);
+    SmartDashboard.putData(m_hook);
   }
 
   //This function is called every robot packet, no matter the mode
