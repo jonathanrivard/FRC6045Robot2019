@@ -61,6 +61,7 @@ public class Robot extends TimedRobot {
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
     CameraServer.getInstance().startAutomaticCapture(); //Setup camera
+    CameraServer.getInstance().startAutomaticCapture();
     SmartDashboard.putString("Message to Driver Station", "Salutations");
   }
 
