@@ -24,9 +24,9 @@ public class ManualHook extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double input = Robot.m_oi.leftJoystick.getY(); //Get z axis
+    double input = Robot.m_oi.leftJoystick.getY(); //Get y axis
     
-    Robot.m_hook.setPercentage(input * RobotMap.SCALER_HOOK * Robot.m_oi.getControlThrottleScaler());
+    Robot.m_hook.setPercentage(input * RobotMap.SCALER_HOOK * Robot.m_oi.getLeftThrottleScaler());
     
   }
 

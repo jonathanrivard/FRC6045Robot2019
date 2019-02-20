@@ -44,7 +44,7 @@ public class RobotMap {
     public static int MOTOR_CLAW_BELT_LEFT = 12;
     public static int MOTOR_CLAW_BELT_RIGHT = 3;
     //-Hook
-    public static int MOTOR_HOOK = 0;
+    public static int MOTOR_HOOK = 2;
     //
     public static int GRAB_HATCH_POS = 5;
     public static int CLAW_CLOSED_POSITION = 0;
@@ -59,7 +59,7 @@ public class RobotMap {
     public static float SCALER_CLAW_BELT_OUT = 0.8f;
     public static float SCALER_CLAW_BELT_IN = 0.4f;
     public static float SCALER_CLAW_TILT = 0.5f;
-    public static float SCALER_HOOK = 0.5f;
+    public static float SCALER_HOOK = 0.8f;
     //LIFT POSITIONS
     public static int POS_ONE = 23350; //Top Ball Height
     public static int POS_TWO = 23350; //Second to Top Height

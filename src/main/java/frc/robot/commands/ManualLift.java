@@ -24,7 +24,7 @@ public class ManualLift extends Command { //Command to manually control the lift
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double input = Robot.m_oi.rightJoystick.getY() * -1;
+    double input = Robot.m_oi.rightJoystick.getY();
     
     /*
     if(Robot.m_lift.getTopLimit() && input > 0){ //If the top limit is pressed and we are tring to go up
@@ -35,6 +35,7 @@ public class ManualLift extends Command { //Command to manually control the lift
       Robot.m_lift.setPercentage(direction * RobotMap.SCALER_LIFT_MANUAL * Robot.m_oi.getControlThrottleScaler()); //Set the lift speed
     } */
     
+    System.out.println(Robot.m_lift.getLiftMotor().getSelectedSensorPosition());
     Robot.m_lift.setPercentage(input * RobotMap.SCALER_LIFT_MANUAL * Robot.m_oi.getRightThrottleScaler());
   }
 

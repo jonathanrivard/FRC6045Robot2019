@@ -58,7 +58,7 @@ public class MoveLift extends Command { //Moves the lift to the desired position
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    int threshold = 250;
+    int threshold = 600;
     long current = Robot.m_lift.getLiftMotor().getSelectedSensorPosition(); //Get current position
     long error = ticks - current; //Find the error of the current position and our desired position
 
