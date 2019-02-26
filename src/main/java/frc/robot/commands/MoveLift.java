@@ -64,13 +64,22 @@ public class MoveLift extends Command { //Moves the lift to the desired position
 
     //Debugging Print Statement
     //System.out.println(error + " ; " + current);
+
     /*
     //Use limit switches for safety
     if(Robot.m_lift.getTopLimit() && error > 0){
       ticks = current;
     }else if(Robot.m_lift.getBottomLimit() && error < 0){
       ticks = current;
-    }*/
+    }
+    */
+
+    if(Robot.m_lift.getBottomLimit() && error < 0){
+      ticks = current;
+      Robot.m_lift.setCurrentPosition(0);
+    }else if(Robot.m_lift.getBottomLimit()){
+      Robot.m_lift.setCurrentPosition(0);
+    }
 
     //Go to the desired position, within the threshold to prevent osolation 
     if(error > threshold){

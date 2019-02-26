@@ -34,6 +34,14 @@ public class ManualLift extends Command { //Command to manually control the lift
     }else { //If neither of those
       Robot.m_lift.setPercentage(direction * RobotMap.SCALER_LIFT_MANUAL * Robot.m_oi.getControlThrottleScaler()); //Set the lift speed
     } */
+
+    //Limit switches
+    if(Robot.m_lift.getBottomLimit() && input < 0){
+      input = 0;
+      Robot.m_lift.setCurrentPosition(0);
+    }else if(Robot.m_lift.getBottomLimit()){
+      Robot.m_lift.setCurrentPosition(0);
+    }
     
     System.out.println(Robot.m_lift.getLiftMotor().getSelectedSensorPosition());
     Robot.m_lift.setPercentage(input * RobotMap.SCALER_LIFT_MANUAL * Robot.m_oi.getRightThrottleScaler());
