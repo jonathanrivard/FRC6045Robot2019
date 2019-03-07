@@ -52,8 +52,8 @@ public class RobotMap {
     // Manual grab is z axis
     // Manual tilt is y axis
     //SCALER
-    public static float SCALER_DRIVE = 0.7f;
-    public static float SCALER_LIFT_MANUAL = 0.6f;
+    public static float SCALER_DRIVE = 0.9f;
+    public static float SCALER_LIFT_MANUAL = 0.7f;
     public static float SCALER_LIFT_AUTO = 0.6f;
     public static float SCALER_CLAW_GRAB = 0.5f;
     public static float SCALER_CLAW_BELT_OUT = 0.8f;
